@@ -1,0 +1,42 @@
+//--------------------------------------------------------------
+// User CSS Overrides — 4s-group
+// Компилируется последним — после Bootstrap и темы.
+//--------------------------------------------------------------
+
+// ── Display: letter-spacing ──
+.display-1, .display-2, .display-3,
+.display-4, .display-5, .display-6 {
+  letter-spacing: -0.02em;
+}
+
+// ── H1 / H2: light + tight tracking ──
+h1, .h1,
+h2, .h2 {
+  letter-spacing: -0.02em;
+}
+
+// ── H3 / H4: semibold + slight tightening ──
+h3, .h3,
+h4, .h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+// ── H5: bold, normal tracking ──
+h5, .h5 {
+  font-weight: 700;
+}
+
+// ── H6: bold + slight open tracking (компенсирует малый размер) ──
+h6, .h6 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+// ── btn-primary: оранжевая тень ──
+.btn-primary {
+  box-shadow: rgba(255, 82, 7, 0.5) 0px 14px 30px -12px;
+}
+.btn-primary:hover {
+  box-shadow: rgba(255, 82, 7, 0.35) 0px 8px 20px -10px;
+}

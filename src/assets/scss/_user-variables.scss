@@ -14,107 +14,85 @@
 
 // ── Кастомные цвета ──
 $custom-colors: (
-  "teal":      #1689a6,   // teal accent, links
-  "navy-dark": #0a3a48,   // dark section backgrounds
-  "navy-deep": #0c5266,   // deeper teal-navy
-  "muted":     #4c6770,   // secondary/muted text
-  "light-sea": #f0f7f9,   // light section backgrounds
+  "teal":      #1689a6,
+  "navy-dark": #0a3a48,
+  "navy-deep": #0c5266,
+  "muted":     #4c6770,
+  "light-sea": #f0f7f9,
 );
 $custom-theme-colors: $custom-colors;
 
 // ── Основные цвета ──
-$blue:  #ff5101;   // (было: #3f78e0) — оранжевый CTA → $primary
-$navy:  #0e2a33;   // (было: #343f52) — очень тёмный navy
-$aqua:  #1689a6;   // (было: #54a8c7) — бирюзовый акцент
+$blue:  #ff5207;   // → $primary
+$navy:  #0e2a33;
+$aqua:  #1689a6;
 
 $body-bg:    #ffffff;
-$body-color: #0e2a33;   // (задаём явно, чтобы не зависеть от $navy)
+$body-color: #0e2a33;
 
-// Глобальное скругление — небольшое (для карточек, инпутов)
-$border-radius:    0.313rem;   // (было: 0.4rem) — ~5px при 16px root
+// ── Скругление ──
+$border-radius:    0.313rem;
 $border-radius-sm: 0.188rem;
 $border-radius-lg: 0.313rem;
 
-// ── Типографика ──
-$font-size-root:    16px;       // (было: 20px) — ВАЖНО: меняет всю rem-шкалу
-$font-size-base:    1.125rem;   // (было: 0.8rem) — 18px при 16px root
-$font-weight-normal: 400;       // (было: 500)
-$line-height-base:  1.65;       // (было: 1.7)
+// ── Типографика — корень ──
+$font-size-root:     16px;
+$font-size-base:     1.125rem;   // 18px
+$font-weight-normal: 400;
+$line-height-base:   1.65;
 
-// Заголовки — ЛЁГКИЕ (ключевая черта дизайна)
-$headings-font-weight: 300;    // (было: 700) — H1/H2 используют 300
+// ── Заголовки ──
+$headings-font-weight: 300;
 
-$h1-font-size: 4.375rem;       // (было: ~1.45rem) — 70px
-$h2-font-size: 2.813rem;       // (было: ~1.3rem)  — 45px
-$h3-font-size: 1.328rem;       // (было: ~1.1rem)  — 21px
-$h4-font-size: 0.813rem;       // (было: ~0.95rem) — 13px (uppercase label)
+$h1-font-size: 3.5rem;     // 56px
+$h2-font-size: 2.813rem;   // 45px
+$h3-font-size: 1.75rem;    // 28px
+$h4-font-size: 1.375rem;   // 22px
+$h5-font-size: 1.125rem;   // 18px
+$h6-font-size: 0.875rem;   // 14px
+
+// ── Display ──
+$display-font-sizes: (
+  1: 5rem,        // 80px
+  2: 4.375rem,    // 70px — из образца
+  3: 3.75rem,     // 60px
+  4: 3rem,        // 48px
+  5: 2.5rem,      // 40px
+  6: 2rem,        // 32px
+);
+$display-font-weight: 300;
 
 // ── Кнопки ──
-$btn-border-width:     1px;    // (было: 2px)
-$btn-font-weight:      600;    // (было: 700)
-$btn-border-radius:    50rem;  // (было: $border-radius) — pill форма
+$btn-border-width:     1px;
+$btn-font-weight:      600;
+$btn-border-radius:    50rem;
 $btn-border-radius-sm: 50rem;
 $btn-border-radius-lg: 50rem;
-
-// Default (основная CTA кнопка)
-$btn-padding-y:  1rem;         // (было: 0.5rem) — 16px
-$btn-padding-x:  1.875rem;     // (было: 1.2rem) — 30px
-$btn-font-size:  1rem;         // 16px
-
-// Small
-$btn-padding-y-sm: 0.5rem;     // (было: 0.4rem)
-$btn-padding-x-sm: 0.813rem;   // (было: 1rem)
-$btn-font-size-sm: 0.813rem;   // 13px
+$btn-padding-y:        1rem;
+$btn-padding-x:        1.875rem;
+$btn-font-size:        1rem;
+$btn-padding-y-sm:     0.5rem;
+$btn-padding-x-sm:     0.813rem;
+$btn-font-size-sm:     0.813rem;
 
 // ── Формы ──
-$input-font-size:          1rem;        // (было: 0.75rem) — 16px
+$input-font-size:          1rem;
 $input-font-weight:        400;
-$input-bg:                 #f0f7f9;    // (было: $body-bg) — светло-голубой
+$input-bg:                 #f0f7f9;
 $input-color:              #0e2a33;
-$input-border-color:       #d8e7eb;    // (было: rgba($shadow-border, 0.07))
-$input-border-radius:      0.313rem;   // ~5px
-$input-padding-y:          0.813rem;   // (было: 0.6rem) — 13px
-$input-padding-x:          0.938rem;   // (было: 1rem) — 15px
-$input-focus-bg:           #f0f7f9;   // без изменений при фокусе
-$input-focus-border-color: #d8e7eb;   // без изменений при фокусе
-$input-focus-box-shadow:   none;       // (было: unset)
-$form-floating-height:     calc(3.125rem + 2px);   // 50px + 2px border
+$input-border-color:       #d8e7eb;
+$input-border-radius:      0.313rem;
+$input-padding-y:          0.813rem;
+$input-padding-x:          0.938rem;
+$input-focus-bg:           #f0f7f9;
+$input-focus-border-color: #d8e7eb;
+$input-focus-box-shadow:   none;
+$form-floating-height:     calc(3.125rem + 2px);
 
 // ── Навигация ──
-$nav-link-font-size:   0.938rem;   // (было: 0.8rem) — 15px
-$nav-link-font-weight: 500;        // (было: $font-weight-bold / 700)
+$nav-link-font-size:   0.938rem;
+$nav-link-font-weight: 500;
 
-//--------------------------------------------------------------
-// CSS overrides
-//--------------------------------------------------------------
-
-// H3 и H4 — отличаются от $headings-font-weight: 300
-h3, .h3 {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-h4, .h4 {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-// H1/H2 — отрицательный letter-spacing (сжатые крупные заголовки)
-h1, .h1,
-h2, .h2 {
-  letter-spacing: -0.02em;
-}
-
-// btn-primary — оранжевая тень (brand effect)
-.btn-primary {
-  box-shadow: rgba(255, 81, 1, 0.5) 0px 14px 30px -12px;
-}
-.btn-primary:hover {
-  box-shadow: rgba(255, 81, 1, 0.35) 0px 8px 20px -10px;
-}
-
-//--------------------------------------------------------------
-// Импорт шрифтов
-//--------------------------------------------------------------
 //START IMPORT FONTS
-// Manrope уже подключён в теме — @import не нужен
+// Manrope уже подключён в теме
 //END IMPORT FONTS
