@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit(**/*.md)",
+      "Write(**/*.md)"
+    ]
+  }
+}
