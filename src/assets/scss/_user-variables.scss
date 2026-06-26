@@ -107,13 +107,14 @@ $form-floating-height:     calc(3.125rem + 2px);  // 50px + 2px border
 $text-line-height: 1.5px;     // matches original (was 1px)
 $text-line-width:  1.625rem;  // 26px — matches original (was 12px)
 $text-line-color:  #1689a6;   // teal (was var(--bs-primary) = orange)
+$text-line-gap:    0.675rem;  // gap between line and text
 
 // Fix: Bootstrap auto-generates .text-line utility (#d8e7eb) which overrides .text-teal
 // because both use !important — double-class wins by specificity
 .text-teal.text-line  { color: #1689a6 !important; }
 .text-white.text-line { color: #ffffff !important; }
 
-.text-line { padding-left: 2.3rem !important; }
+.text-line { padding-left: ($text-line-width + $text-line-gap) !important; }
 
 // ── Navigation ──
 $nav-link-font-size:   0.938rem;  // 15px (was 0.8rem)
