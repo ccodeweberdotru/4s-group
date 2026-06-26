@@ -157,6 +157,25 @@ $box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
 $card-desc-font-size: 0.906rem;  // 14.5px — description text in adv-cards
 .fs-card-desc { font-size: $card-desc-font-size; line-height: 1.55; }
 
+// ── Cell component (compact info card: label / title / desc) ──
+.cw-cell { padding: 0.8125rem 0.9375rem !important; }  // 13px 15px
+.cw-cell-label {
+  font-size: 0.6875rem;     // 11px
+  font-weight: 700;
+  letter-spacing: 0.089375rem;  // 1.43px
+  text-transform: uppercase;
+  line-height: 1.65;
+}
+.cw-cell-title {
+  font-size: 1rem;          // 16px
+  font-weight: 600;
+  line-height: 1.65;
+}
+.cw-cell-desc {
+  font-size: 0.78125rem;    // 12.5px
+  line-height: 1.65;
+}
+
 .cw-sm-subtitle {
   font-size: $h4-font-size;      // 13px
   font-weight: 600;
