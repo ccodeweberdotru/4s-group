@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4s-group — Style Guide</title>
+  <link rel="stylesheet" href="./assets/css/plugins.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="bg-navy-dark py-2 px-4 sticky-top">
+    <div class="overflow-auto text-nowrap">
+      <a href="#colors" class="text-white-50 small me-3 text-decoration-none">Colors</a>
+      <a href="#typography" class="text-white-50 small me-3 text-decoration-none">Typography</a>
+      <a href="#buttons" class="text-white-50 small me-3 text-decoration-none">Buttons</a>
+      <a href="#cards" class="text-white-50 small me-3 text-decoration-none">Cards</a>
+      <a href="#tables" class="text-white-50 small me-3 text-decoration-none">Tables</a>
+      <a href="#utilities" class="text-white-50 small me-3 text-decoration-none">Utilities</a>
+    </div>
+  </nav>
+  <!-- ═══════════════════════════════════════════
+     COLORS
+════════════════════════════════════════════ -->
+  <section id="colors" class="py-16">
+    <div class="container">
+      <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-5">Brand palette — $custom-colors</p>
+      <div class="row g-3 mb-5">
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#1689a6"></div>
+          <p class="cw-sm-subtitle mb-0">teal</p>
+          <p class="text-muted fs-sm mb-0">#1689a6</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#2fb6d0"></div>
+          <p class="cw-sm-subtitle mb-0">sea</p>
+          <p class="text-muted fs-sm mb-0">#2fb6d0</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#10b6ce"></div>
+          <p class="cw-sm-subtitle mb-0">accent</p>
+          <p class="text-muted fs-sm mb-0">#10b6ce</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#0e2a33"></div>
+          <p class="cw-sm-subtitle mb-0">navy</p>
+          <p class="text-muted fs-sm mb-0">#0e2a33</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#0a3a48"></div>
+          <p class="cw-sm-subtitle mb-0">navy-dark</p>
+          <p class="text-muted fs-sm mb-0">#0a3a48</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#0c5266"></div>
+          <p class="cw-sm-subtitle mb-0">navy-deep</p>
+          <p class="text-muted fs-sm mb-0">#0c5266</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#ff5101"></div>
+          <p class="cw-sm-subtitle mb-0">primary</p>
+          <p class="text-muted fs-sm mb-0">#ff5101</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#e5490a"></div>
+          <p class="cw-sm-subtitle mb-0">brand-press</p>
+          <p class="text-muted fs-sm mb-0">#e5490a</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 mb-2" style="height:80px;background:#4c6770"></div>
+          <p class="cw-sm-subtitle mb-0">muted</p>
+          <p class="text-muted fs-sm mb-0">#4c6770</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 border mb-2" style="height:80px;background:#f0f7f9"></div>
+          <p class="cw-sm-subtitle mb-0">light-sea</p>
+          <p class="text-muted fs-sm mb-0">#f0f7f9</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 border mb-2" style="height:80px;background:#e3f0f3"></div>
+          <p class="cw-sm-subtitle mb-0">paper-2</p>
+          <p class="text-muted fs-sm mb-0">#e3f0f3</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="rounded-3 border mb-2" style="height:80px;background:#d8e7eb"></div>
+          <p class="cw-sm-subtitle mb-0">line</p>
+          <p class="text-muted fs-sm mb-0">#d8e7eb</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════
+     TYPOGRAPHY
+════════════════════════════════════════════ -->
+  <section id="typography" class="py-16 bg-light-sea">
+    <div class="container">
+      <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-5">Typography — Manrope · $font-size-root: 16px</p>
+      <div class="mb-5">
+        <h1 class="mb-1">h1 — Снабжение и сервис судов</h1>
+        <p class="text-muted fs-sm">4.75rem / 300 / lh 1.08 / ls -0.02em</p>
+        <h2 class="mb-1">h2 — Российская инженерная компания</h2>
+        <p class="text-muted fs-sm">3.25rem / 300 / lh 1.08 / ls -0.02em</p>
+        <h3 class="mb-1">h3 — Полный цикл снабжения</h3>
+        <p class="text-muted fs-sm">1.625rem / 300 / lh 1.08 / ls -0.01em</p>
+        <h4 class="mb-1">H4 UPPERCASE LABEL</h4>
+        <p class="text-muted fs-sm">0.813rem / 300 / uppercase</p>
+        <p class="lead mb-1">Lead — Поставляем судовые запасные части и оборудование напрямую от OEM и дистрибьюторов.</p>
+        <p class="text-muted fs-sm">$lead-font-size / $lead-font-weight</p>
+        <p class="mb-1">Body — Определяем деталь по каталожному номеру, чертежу или образцу без ошибок в спецификации.</p>
+        <p class="text-muted fs-sm">1.125rem / 400 / lh 1.65</p>
+        <p class="fs-sm mb-1">fs-sm — Конкурентные цены и оптимальные сроки поставки.</p>
+        <p class="text-muted fs-sm">$font-size-sm</p>
+        <p class="fs-lg mb-1">fs-lg — Широкая сеть зарубежных партнёров.</p>
+        <p class="text-muted fs-sm">1.3125rem / 21px</p>
+        <p class="text-muted mb-1">text-muted — Вспомогательный текст и описания.</p>
+        <p class="text-muted fs-sm">#4c6770</p>
+      </div>
+      <div class="mb-5">
+        <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-4">text-line subtitle variants</p>
+        <p class="cw-subtitle text-teal text-line mb-2">О компании</p>
+        <p class="cw-sm-subtitle text-teal mb-2">cw-sm-subtitle teal</p>
+        <p class="cw-sm-subtitle text-primary mb-2">cw-sm-subtitle primary</p>
+        <p class="cw-card-title mb-1">cw-card-title — 19px / 600</p>
+        <p class="cw-card-title-md mb-1">cw-card-title-md — 21px / 600</p>
+        <p class="cw-card-title-lg mb-1">cw-card-title-lg — 23px / 600</p>
+      </div>
+      <div class="bg-navy-dark rounded-3 p-5">
+        <p class="cw-subtitle text-white-50 border-start border-3 border-white border-opacity-25 ps-2 mb-4">On dark</p>
+        <p class="cw-subtitle text-white text-line mb-2">О компании</p>
+        <h2 class="text-white mb-2">Заголовок на тёмном</h2>
+        <p class="text-white-50 mb-0">Вспомогательный текст на тёмном фоне.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════
+     BUTTONS
+════════════════════════════════════════════ -->
+  <section id="buttons" class="py-16">
+    <div class="container">
+      <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-5">Buttons — pill shape · $btn-border-radius: 50rem</p>
+      <div class="d-flex flex-wrap gap-3 mb-4 align-items-center">
+        <a href="#" class="btn btn-primary">Отправить заявку</a>
+        <a href="#" class="btn btn-outline-primary">Подробнее</a>
+        <a href="#" class="btn btn-teal">Контакты</a>
+        <a href="#" class="btn btn-outline-teal">Скачать PDF</a>
+        <a href="#" class="btn btn-navy">Каталог</a>
+        <a href="#" class="btn btn-outline-secondary">Документы</a>
+      </div>
+      <div class="d-flex flex-wrap gap-3 mb-4 align-items-center">
+        <a href="#" class="btn btn-sm btn-primary">Отправить заявку</a>
+        <a href="#" class="btn btn-sm btn-outline-primary">Подробнее</a>
+        <a href="#" class="btn btn-sm btn-teal">Контакты</a>
+        <a href="#" class="btn btn-sm btn-outline-secondary">Документы</a>
+      </div>
+      <div class="bg-navy-dark rounded-3 p-4 d-flex flex-wrap gap-3 align-items-center">
+        <a href="#" class="btn btn-primary">Отправить заявку</a>
+        <a href="#" class="btn btn-outline-white">Подробнее</a>
+      </div>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════
+     CARDS
+════════════════════════════════════════════ -->
+  <section id="cards" class="py-16 bg-light-sea">
+    <div class="container">
+      <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-5">Card components</p>
+      <!-- cw-card-title (19px) -->
+      <p class="cw-sm-subtitle text-muted mb-3">cw-card-title — 19px / 600</p>
+      <div class="row g-3 mb-5">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <p class="cw-sm-subtitle text-teal mb-2">Профиль</p>
+            <p class="cw-card-title mb-1">Снабжение</p>
+            <p class="mb-0 text-muted fs-sm">Судовое СЗЧ и оборудование</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <p class="cw-sm-subtitle text-teal mb-2">География</p>
+            <p class="cw-card-title mb-1">РФ + хабы</p>
+            <p class="mb-0 text-muted fs-sm">Поставки в Россию и за рубеж</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100 card-lift">
+            <p class="cw-sm-subtitle text-teal mb-2">Подход</p>
+            <p class="cw-card-title mb-1">Под заявку</p>
+            <p class="mb-0 text-muted fs-sm">КП в кратчайшие сроки</p>
+          </div>
+        </div>
+      </div>
+      <!-- cw-card-title-md (21px) -->
+      <p class="cw-sm-subtitle text-muted mb-3">cw-card-title-md — 21px / 600</p>
+      <div class="row g-3 mb-5">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <p class="cw-sm-subtitle text-primary mb-2">01</p>
+            <p class="cw-card-title-md mb-2">Идентификация</p>
+            <p class="mb-0 text-muted fs-sm">Определяем деталь по каталожному номеру или образцу.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <p class="cw-sm-subtitle text-primary mb-2">02</p>
+            <p class="cw-card-title-md mb-2">Поиск и закупка</p>
+            <p class="mb-0 text-muted fs-sm">Подбираем OEM или аналог по базе партнёров.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <p class="cw-sm-subtitle text-primary mb-2">03</p>
+            <p class="cw-card-title-md mb-2">КП</p>
+            <p class="mb-0 text-muted fs-sm">Готовим КП с прозрачной структурой стоимости.</p>
+          </div>
+        </div>
+      </div>
+      <!-- cw-card-title-lg (23px) -->
+      <p class="cw-sm-subtitle text-muted mb-3">cw-card-title-lg — 23px / 600</p>
+      <div class="row g-3 mb-5">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="mb-3"><span class="badge rounded-pill bg-paper-2 text-teal px-3 py-2">Развиваем</span></div>
+            <p class="cw-card-title-lg mb-2">Технический менеджмент</p>
+            <p class="mb-0 text-muted fs-sm">Полный технический менеджмент судов, включая крюинг.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="mb-3"><span class="badge rounded-pill bg-paper-2 text-teal px-3 py-2">Развиваем</span></div>
+            <p class="cw-card-title-lg mb-2">Сервисное обслуживание</p>
+            <p class="mb-0 text-muted fs-sm">Сервис судового оборудования через партнёрские организации.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100 card-lift">
+            <div class="mb-3"><span class="badge rounded-pill bg-paper-2 text-teal px-3 py-2">Турция · Китай</span></div>
+            <p class="cw-card-title-lg mb-2">Судоремонт</p>
+            <p class="mb-0 text-muted fs-sm">Организация ремонтов судов на верфях.</p>
+          </div>
+        </div>
+      </div>
+      <!-- card-docs -->
+      <p class="cw-sm-subtitle text-muted mb-3">card-docs</p>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card card-docs card-interactive card-lift border rounded-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-primary bg-opacity-10 rounded-2 text-center p-3 flex-shrink-0 text-primary lh-1">
+                <i class="uil uil-file fs-30 d-block"></i>
+                <span class="cw-subtitle fs-11">PDF</span>
+              </div>
+              <div class="flex-grow-1">
+                <p class="cw-sm-subtitle text-teal mb-1">Сертификат</p>
+                <h5 class="mb-1 lh-sm">Свидетельство о государственной регистрации</h5>
+                <p class="mb-0 text-muted fs-sm">PDF · 2,4 МБ</p>
+              </div>
+              <div class="flex-shrink-0 pe-3">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Скачать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-docs card-interactive card-lift border rounded-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-primary bg-opacity-10 rounded-2 text-center p-3 flex-shrink-0 text-primary lh-1">
+                <i class="uil uil-file fs-30 d-block"></i>
+                <span class="cw-subtitle fs-11">PDF</span>
+              </div>
+              <div class="flex-grow-1">
+                <p class="cw-sm-subtitle text-teal mb-1">Лицензия</p>
+                <h5 class="mb-1 lh-sm">Лицензия на ремонт судового оборудования</h5>
+                <p class="mb-0 text-muted fs-sm">PDF · 1,1 МБ</p>
+              </div>
+              <div class="flex-shrink-0 pe-3">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Скачать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════
+     TABLES
+════════════════════════════════════════════ -->
+  <section id="tables" class="py-16">
+    <div class="container">
+      <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-5">Tables</p>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <p class="cw-sm-subtitle text-muted mb-3">table-key-value (light)</p>
+          <div class="card border rounded-3 overflow-hidden">
+            <table class="table table-borderless table-key-value mb-0">
+              <tbody>
+                <tr>
+                  <td>Организация</td>
+                  <td>ООО «4С-ГРУП»</td>
+                </tr>
+                <tr>
+                  <td>ИНН / КПП</td>
+                  <td>9734011450 / 772801001</td>
+                </tr>
+                <tr>
+                  <td>Адрес</td>
+                  <td>117420, Москва, ул. Профсоюзная 57</td>
+                </tr>
+                <tr>
+                  <td>Банк</td>
+                  <td>ПАО Сбербанк, г. Москва</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p class="cw-sm-subtitle text-muted mb-3">table-key-value-dark (on navy)</p>
+          <div class="bg-navy-dark rounded-3 overflow-hidden">
+            <table class="table table-borderless table-key-value-dark mb-0">
+              <tbody>
+                <tr>
+                  <td>Организация</td>
+                  <td>ООО «4С-ГРУП»</td>
+                </tr>
+                <tr>
+                  <td>ИНН / КПП</td>
+                  <td>9734011450 / 772801001</td>
+                </tr>
+                <tr>
+                  <td>Адрес</td>
+                  <td>117420, Москва, ул. Профсоюзная 57</td>
+                </tr>
+                <tr>
+                  <td>Банк</td>
+                  <td>ПАО Сбербанк, г. Москва</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════
+     UTILITIES
+════════════════════════════════════════════ -->
+  <section id="utilities" class="py-16 bg-light-sea">
+    <div class="container">
+      <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-5">Utility classes</p>
+      <!-- Badges -->
+      <p class="cw-sm-subtitle text-muted mb-3">Badges</p>
+      <div class="d-flex flex-wrap gap-2 mb-5">
+        <span class="badge rounded-pill bg-primary text-white px-3 py-2">Primary</span>
+        <span class="badge rounded-pill bg-teal text-white px-3 py-2">Teal</span>
+        <span class="badge rounded-pill bg-paper-2 text-teal px-3 py-2">Paper-2</span>
+        <span class="badge rounded-pill bg-light-sea text-teal border border-line px-3 py-2">Light Sea</span>
+        <span class="badge rounded-pill bg-navy-dark text-white px-3 py-2">Navy Dark</span>
+      </div>
+      <!-- Borders -->
+      <p class="cw-sm-subtitle text-muted mb-3">Border colors — $border-color: #d8e7eb</p>
+      <div class="d-flex flex-wrap gap-3 mb-5">
+        <div class="border rounded-3 p-3 fs-sm">.border</div>
+        <div class="border border-teal rounded-3 p-3 fs-sm">.border-teal</div>
+        <div class="border border-primary rounded-3 p-3 fs-sm">.border-primary</div>
+        <div class="border border-2 rounded-3 p-3 fs-sm">.border-2</div>
+      </div>
+      <!-- Shadows -->
+      <p class="cw-sm-subtitle text-muted mb-3">Shadows</p>
+      <div class="d-flex flex-wrap gap-3 mb-5">
+        <div class="bg-white rounded-3 p-4 shadow-sm fs-sm">shadow-sm</div>
+        <div class="bg-white rounded-3 p-4 shadow fs-sm">shadow</div>
+        <div class="bg-white rounded-3 p-4 shadow-lg fs-sm">shadow-lg</div>
+      </div>
+      <!-- card-lift -->
+      <p class="cw-sm-subtitle text-muted mb-3">card-lift (hover effect)</p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card border rounded-3 p-4 card-lift">
+            <p class="cw-card-title mb-1">card-lift</p>
+            <p class="mb-0 text-muted fs-sm">Hover для подъёма и тени.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

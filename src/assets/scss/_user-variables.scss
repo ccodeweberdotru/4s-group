@@ -153,6 +153,33 @@ $box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
   }
 }
 
+// ── Card component classes ──
+.cw-sm-subtitle {
+  font-size: $h4-font-size;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  line-height: 1.5;
+}
+.cw-card-title {
+  font-size: 1.1875rem;  // 19px
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.cw-card-title-md {
+  font-size: 1.3125rem;  // 21px
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.cw-card-title-lg {
+  font-size: 1.4375rem;  // 23px
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
 // ── Doc cards ──
 .card-docs {
   position: relative;
