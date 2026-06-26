@@ -1,98 +1,95 @@
 //--------------------------------------------------------------
 // User Variables — 4s-group
-// Child тема: codeweber
-// Дата: 2026-06-12
-//--------------------------------------------------------------
-// Порядок импорта: _theme-colors → _user-variables → _variables
-//
-// ВАЖНО: $primary и $white недоступны в этом файле!
-//         Используй $blue вместо $primary, #ffffff вместо $white.
-//
-// Извлечено из: 4С-ГРУП РУСМОРПРОЕКТ — морской вариант
-// Отчёт: doc_claude/reports/2026-06-12/DESIGN-EXTRACT-4s-group.md
+// Source: DESIGN-EXTRACT-4s-group.md (2026-06-12)
 //--------------------------------------------------------------
 
-// ── Кастомные цвета ──
+// ── Custom colors ──
 $custom-colors: (
-  "teal":      #1689a6,
-  "navy-dark": #0a3a48,
-  "navy-deep": #0c5266,
-  "muted":     #4c6770,
-  "light-sea": #f0f7f9,
+  "teal":        #1689a6,  // --sea-2
+  "sea":         #2fb6d0,  // --sea-1
+  "accent":      #10b6ce,  // --accent
+  "navy-dark":   #0a3a48,  // --sea-4 / --drk
+  "navy-deep":   #0c5266,  // --sea-3 / --drk2
+  "muted":       #4c6770,  // --ink-soft
+  "light-sea":   #f0f7f9,  // --paper
+  "paper-2":     #e3f0f3,  // --paper-2
+  "line":        #d8e7eb,  // --line
+  "line-2":      #c7dce2,  // --line-2
+  "brand-press": #e5490a,  // --brand-press
 );
 $custom-theme-colors: $custom-colors;
 
-// ── Основные цвета ──
-$blue:  #ff5207;   // → $primary
-$navy:  #0e2a33;
-$aqua:  #1689a6;
+// ── Theme colors ──
+$primary: #ff5101;  // brand orange — overrides $primary: $blue !default in _variables.scss
+$navy:    #0e2a33;  // dark body text (was #343f52)
+$aqua:    #1689a6;  // teal accent (was #54a8c7)
 
 $body-bg:    #ffffff;
 $body-color: #0e2a33;
 
-// ── Скругление ──
-$border-radius:    0.313rem;
+// ── Border radius ──
+$border-radius:    0.313rem;  // ~5px
 $border-radius-sm: 0.188rem;
 $border-radius-lg: 0.313rem;
 
-// ── Типографика — корень ──
-$font-size-root:     16px;
-$font-size-base:     1.125rem;   // 18px
-$font-weight-normal: 400;
-$line-height-base:   1.65;
+// ── Typography ──
+$font-size-root:     16px;      // (was 20px) — affects all rem values
+$font-size-base:     1.125rem;  // 18px
+$font-weight-normal: 400;       // (was 500)
+$line-height-base:   1.65;      // (was 1.7)
 
-// ── Заголовки ──
-$headings-font-weight: 300;
+// Headings — light weight is key to this design
+$headings-font-weight: 300;     // (was 700)
 
-$h1-font-size: 3.5rem;     // 56px
-$h2-font-size: 2.813rem;   // 45px
-$h3-font-size: 1.75rem;    // 28px
-$h4-font-size: 1.375rem;   // 22px
-$h5-font-size: 1.125rem;   // 18px
-$h6-font-size: 0.875rem;   // 14px
+$h1-font-size: 4.375rem;  // 70px
+$h2-font-size: 2.813rem;  // 45px
+$h3-font-size: 1.328rem;  // ~21px
+$h4-font-size: 0.813rem;  // 13px (uppercase label style)
 
-// ── Display ──
+// Display
 $display-font-sizes: (
-  1: 5rem,        // 80px
-  2: 4.375rem,    // 70px — из образца
-  3: 3.75rem,     // 60px
-  4: 3rem,        // 48px
-  5: 2.5rem,      // 40px
-  6: 2rem,        // 32px
+  1: 4.375rem,
+  2: 3.75rem,
+  3: 3.125rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.75rem,
 );
 $display-font-weight: 300;
 
-// ── Кнопки ──
-$btn-border-width:     1px;
-$btn-font-weight:      600;
-$btn-border-radius:    50rem;
+// ── Buttons ──
+$btn-border-width:     1px;     // (was 2px)
+$btn-font-weight:      600;     // (was 700)
+$btn-border-radius:    50rem;   // pill shape
 $btn-border-radius-sm: 50rem;
 $btn-border-radius-lg: 50rem;
-$btn-padding-y:        1rem;
-$btn-padding-x:        1.875rem;
-$btn-font-size:        1rem;
-$btn-padding-y-sm:     0.5rem;
-$btn-padding-x-sm:     0.813rem;
-$btn-font-size-sm:     0.813rem;
 
-// ── Формы ──
-$input-font-size:          1rem;
+$btn-padding-y:    1rem;       // 16px
+$btn-padding-x:    1.875rem;   // 30px
+$btn-font-size:    1rem;       // 16px
+
+$btn-padding-y-sm: 0.5rem;     // 8px
+$btn-padding-x-sm: 0.813rem;   // 13px
+$btn-font-size-sm: 0.813rem;   // 13px
+
+// ── Forms ──
+$input-font-size:          1rem;      // (was 0.75rem)
 $input-font-weight:        400;
-$input-bg:                 #f0f7f9;
+$input-bg:                 #f0f7f9;   // light blue-gray (was white)
 $input-color:              #0e2a33;
 $input-border-color:       #d8e7eb;
 $input-border-radius:      0.313rem;
-$input-padding-y:          0.813rem;
-$input-padding-x:          0.938rem;
-$input-focus-bg:           #f0f7f9;
-$input-focus-border-color: #d8e7eb;
+$input-padding-y:          0.813rem;  // 13px
+$input-padding-x:          0.938rem;  // 15px
+$input-focus-bg:           #f0f7f9;   // no change on focus
+$input-focus-border-color: #d8e7eb;   // no change on focus
 $input-focus-box-shadow:   none;
-$form-floating-height:     calc(3.125rem + 2px);
+$form-floating-height:     calc(3.125rem + 2px);  // 50px + 2px border
 
-// ── Навигация ──
-$nav-link-font-size:   0.938rem;
-$nav-link-font-weight: 500;
+// ── Navigation ──
+$nav-link-font-size:   0.938rem;  // 15px (was 0.8rem)
+$nav-link-font-weight: 500;       // (was 700)
 
 //START IMPORT FONTS
-// Manrope уже подключён в теме
+$path-to-fonts: 'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700';
 //END IMPORT FONTS

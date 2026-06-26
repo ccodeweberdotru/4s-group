@@ -1,42 +1,86 @@
-//--------------------------------------------------------------
-// User CSS Overrides — 4s-group
-// Компилируется последним — после Bootstrap и темы.
-//--------------------------------------------------------------
+// ──────────────────────────────────────────────
+// _user.scss — 4s-group
+// CSS-переопределения ПОСЛЕ Bootstrap
+// ──────────────────────────────────────────────
 
-// ── Display: letter-spacing ──
-.display-1, .display-2, .display-3,
-.display-4, .display-5, .display-6 {
+// ── Ghost: полупрозрачный белый фон (для кнопок и секций на тёмном bg) ──
+
+.btn-ghost {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
+  }
+
+  &:active,
+  &.active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
+    color: #ffffff !important;
+  }
+}
+
+.bg-ghost {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+}
+
+// ── Counter number ──
+
+.cw-counter {
+  font-size: 46px;
+  font-weight: 300;
   letter-spacing: -0.02em;
+  line-height: 1;
 }
 
-// ── H1 / H2: light + tight tracking ──
-h1, .h1,
-h2, .h2 {
-  letter-spacing: -0.02em;
+// ── Card ghost: полупрозрачная карточка с обводкой ──
+
+.card-ghost {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff;
 }
 
-// ── H3 / H4: semibold + slight tightening ──
-h3, .h3,
-h4, .h4 {
-  font-weight: 600;
-  letter-spacing: -0.01em;
+// ── Hero: тёмный оверлей на секции с background-image ──
+
+.has-dark-overlay {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      rgba(10, 58, 72, 0.92) 30%,
+      rgba(10, 58, 72, 0.6)  70%,
+      rgb(10, 58, 72)
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
 }
 
-// ── H5: bold, normal tracking ──
-h5, .h5 {
-  font-weight: 700;
-}
+// ── Gutenberg Title block: подзаголовок ──
+// Дефолтный вид .cw-subtitle (как образец: fs-15 + uppercase).
+// Без !important — настройки блока (Size/Transform) перекрывают.
 
-// ── H6: bold + slight open tracking (компенсирует малый размер) ──
-h6, .h6 {
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-// ── btn-primary: оранжевая тень ──
-.btn-primary {
-  box-shadow: rgba(255, 82, 7, 0.5) 0px 14px 30px -12px;
-}
-.btn-primary:hover {
-  box-shadow: rgba(255, 82, 7, 0.35) 0px 8px 20px -10px;
+.cw-subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
