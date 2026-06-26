@@ -111,6 +111,9 @@ $text-line-color:  #1689a6;   // teal (was var(--bs-primary) = orange)
 $nav-link-font-size:   0.938rem;  // 15px (was 0.8rem)
 $nav-link-font-weight: 500;       // (was 700)
 
+// ── Font size utilities ──
+.fs-lg { font-size: 1.125rem !important; } // 18px fixed
+
 // ── Hover shadow + lift (reusable) ──
 $box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
 
