@@ -153,6 +153,28 @@ $box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
   }
 }
 
+// ── Overlay color — navy-dark (#0a3a48) instead of default gray-900 ──
+.overlay .bottom-overlay::after {
+  background: linear-gradient(to top, rgba(#0a3a48, 0.85) 0%, rgba(#0a3a48, 0.55) 50%, transparent 100%);
+}
+.overlay-5 span.bg { background: rgba(#0a3a48, 0.92) !important; }
+
+// ── About badge (frosted glass stat on photo cards) ──
+.about-badge {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  z-index: 4;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(14px);
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.25rem;  // 14px 20px
+  .b1 { font-size: 1.625rem; font-weight: 300; line-height: 1; color: #ffffff; }  // 26px
+  .b2 { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.85); margin-top: 0.3125rem; }  // 13px
+}
+
 // ── Card component classes ──
 $card-desc-font-size: 0.906rem;  // 14.5px — description text in adv-cards
 .fs-card-desc { font-size: $card-desc-font-size; line-height: 1.55; }
