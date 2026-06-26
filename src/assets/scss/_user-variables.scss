@@ -39,7 +39,8 @@ $font-weight-normal: 400;       // (was 500)
 $line-height-base:   1.65;      // (was 1.7)
 
 // Headings — light weight is key to this design
-$headings-font-weight: 300;     // (was 700)
+$headings-font-weight:      300;   // (was 700)
+$headings-line-height:      1.08;  // (was ~1.2) — original: h2/h3 = 1.08
 
 $h1-font-size: 4.375rem;  // 70px
 $h2-font-size: 2.813rem;  // 45px
