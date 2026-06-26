@@ -113,7 +113,7 @@ $text-line-color:  #1689a6;   // teal (was var(--bs-primary) = orange)
 .text-teal.text-line  { color: #1689a6 !important; }
 .text-white.text-line { color: #ffffff !important; }
 
-.text-line { padding-left: 2.3rem; }
+.text-line { padding-left: 2.3rem !important; }
 
 // ── Navigation ──
 $nav-link-font-size:   0.938rem;  // 15px (was 0.8rem)
