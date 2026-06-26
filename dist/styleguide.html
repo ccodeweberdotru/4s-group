@@ -166,53 +166,53 @@
   <section id="cards" class="py-16 bg-light-sea">
     <div class="container">
       <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-5">Card components</p>
-      <!-- cw-card-title (19px) -->
-      <p class="cw-sm-subtitle text-muted mb-3">cw-card-title — 19px / 600</p>
+      <!-- cw-cell (compact info card: 16px/600 title, 11px label) -->
+      <p class="cw-sm-subtitle text-muted mb-3">cw-cell — compact info card (cw-cell-label / cw-cell-title / cw-cell-desc)</p>
       <div class="row g-3 mb-5">
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
-            <p class="cw-sm-subtitle text-teal mb-2">Профиль</p>
-            <p class="cw-card-title mb-1">Снабжение</p>
-            <p class="mb-0 text-muted fs-sm">Судовое СЗЧ и оборудование</p>
+          <div class="card border-0 rounded-3 h-100 cw-cell">
+            <p class="cw-cell-label text-teal mb-1">Профиль</p>
+            <p class="cw-cell-title mb-1">Снабжение</p>
+            <p class="mb-0 text-muted cw-cell-desc">Судовое СЗЧ и оборудование</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
-            <p class="cw-sm-subtitle text-teal mb-2">География</p>
-            <p class="cw-card-title mb-1">РФ + хабы</p>
-            <p class="mb-0 text-muted fs-sm">Поставки в Россию и за рубеж</p>
+          <div class="card border-0 rounded-3 h-100 cw-cell">
+            <p class="cw-cell-label text-teal mb-1">География</p>
+            <p class="cw-cell-title mb-1">РФ + хабы</p>
+            <p class="mb-0 text-muted cw-cell-desc">Поставки в Россию и за рубеж</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm rounded-3 p-4 h-100 card-lift">
-            <p class="cw-sm-subtitle text-teal mb-2">Подход</p>
-            <p class="cw-card-title mb-1">Под заявку</p>
-            <p class="mb-0 text-muted fs-sm">КП в кратчайшие сроки</p>
+          <div class="card border-0 rounded-3 h-100 cw-cell card-lift">
+            <p class="cw-cell-label text-teal mb-1">Подход</p>
+            <p class="cw-cell-title mb-1">Под заявку</p>
+            <p class="mb-0 text-muted cw-cell-desc">КП в кратчайшие сроки</p>
           </div>
         </div>
       </div>
-      <!-- cw-card-title-md (21px) -->
-      <p class="cw-sm-subtitle text-muted mb-3">cw-card-title-md — 21px / 600</p>
+      <!-- cw-step-num + cw-card-title-md (process step cards) -->
+      <p class="cw-sm-subtitle text-muted mb-3">cw-step-num + cw-card-title-md — process step cards</p>
       <div class="row g-3 mb-5">
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
-            <p class="cw-sm-subtitle text-primary mb-2">01</p>
+          <div class="card border-0 rounded-3 py-5 px-4 h-100">
+            <p class="cw-step-num text-primary mb-2">01</p>
             <p class="cw-card-title-md mb-2">Идентификация</p>
-            <p class="mb-0 text-muted fs-sm">Определяем деталь по каталожному номеру или образцу.</p>
+            <p class="mb-0 text-muted fs-card-desc">Определяем деталь по каталожному номеру или образцу.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
-            <p class="cw-sm-subtitle text-primary mb-2">02</p>
+          <div class="card border-0 rounded-3 py-5 px-4 h-100">
+            <p class="cw-step-num text-primary mb-2">02</p>
             <p class="cw-card-title-md mb-2">Поиск и закупка</p>
-            <p class="mb-0 text-muted fs-sm">Подбираем OEM или аналог по базе партнёров.</p>
+            <p class="mb-0 text-muted fs-card-desc">Подбираем OEM или аналог по базе партнёров.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
-            <p class="cw-sm-subtitle text-primary mb-2">03</p>
+          <div class="card border-0 rounded-3 py-5 px-4 h-100">
+            <p class="cw-step-num text-primary mb-2">03</p>
             <p class="cw-card-title-md mb-2">КП</p>
-            <p class="mb-0 text-muted fs-sm">Готовим КП с прозрачной структурой стоимости.</p>
+            <p class="mb-0 text-muted fs-card-desc">Готовим КП с прозрачной структурой стоимости.</p>
           </div>
         </div>
       </div>
