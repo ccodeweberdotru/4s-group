@@ -135,8 +135,8 @@ $nav-link-font-weight: 500;       // (was 700)
 .table-key-value-dark {
   tr:not(:last-child) { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
   td { padding: 0.75rem 1rem; }
-  td:first-child { color: rgba(255, 255, 255, 0.5); font-weight: 400; }
-  td:last-child  { font-weight: 500; color: #ffffff; text-align: end; }
+  td:first-child, th:first-child { color: rgba(255, 255, 255, 0.5); font-weight: 400; }
+  td:last-child, th:last-child   { font-weight: 500; color: #ffffff; text-align: end; }
 }
 
 // ── Hover shadow + lift (reusable) ──
