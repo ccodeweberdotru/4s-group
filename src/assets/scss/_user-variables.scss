@@ -98,8 +98,14 @@ $form-floating-height:     calc(3.125rem + 2px);  // 50px + 2px border
 :root h3, :root .h3 { letter-spacing: -0.01em; }
 
 // ── text-line pseudo-element ──
-$text-line-height: 1px;       // (was 0.05rem = invisible at root 16px)
+$text-line-height: 1.5px;     // matches original (was 1px)
+$text-line-width:  1.625rem;  // 26px — matches original (was 12px)
 $text-line-color:  #1689a6;   // teal (was var(--bs-primary) = orange)
+
+// Fix: Bootstrap auto-generates .text-line utility (#d8e7eb) which overrides .text-teal
+// because both use !important — double-class wins by specificity
+.text-teal.text-line  { color: #1689a6 !important; }
+.text-white.text-line { color: #ffffff !important; }
 
 // ── Navigation ──
 $nav-link-font-size:   0.938rem;  // 15px (was 0.8rem)
@@ -136,10 +142,20 @@ $box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
     background: linear-gradient(180deg, #ff5101, #e5490a);
     transform: scaleX(0);
     transform-origin: left center;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: none;
   }
   &:hover::before {
     transform: scaleX(1);
+  }
+  .btn-outline-secondary {
+    padding: 0.5625rem 1rem;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  &:hover .btn-outline-secondary {
+    background-color: #ff5101;
+    border-color: #ff5101;
+    color: #ffffff;
   }
 }
 
