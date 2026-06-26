@@ -154,12 +154,28 @@ $box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
 }
 
 // ── Card component classes ──
+$card-desc-font-size: 0.906rem;  // 14.5px — description text in adv-cards
+.fs-card-desc { font-size: $card-desc-font-size; line-height: 1.55; }
+
 .cw-sm-subtitle {
-  font-size: $h4-font-size;
+  font-size: $h4-font-size;      // 13px
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   line-height: 1.5;
+}
+.cw-step-num {
+  font-size: 0.9375rem;  // 15px — process step numbers (no uppercase)
+  font-weight: 700;
+  letter-spacing: 0.09375rem;  // 1.5px
+  line-height: 1.65;
+}
+.cw-chip {
+  font-size: 0.75rem;    // 12px — category banner chips
+  font-weight: 600;
+  letter-spacing: 0.0075rem;
+  padding: 0.3125rem 0.6875rem;  // 5px 11px
+  border-radius: 50rem;
 }
 .cw-card-title {
   font-size: 1.1875rem;  // 19px
