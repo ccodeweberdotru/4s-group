@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4s-group — Components</title>
+  <link rel="stylesheet" href="./assets/css/plugins.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    .cmp-nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #0a3a48;
+    }
+
+    .cmp-nav a {
+      color: rgba(255, 255, 255, .7);
+      font-size: 12px;
+      padding: 8px 14px;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .cmp-nav a:hover {
+      color: #fff;
+    }
+
+    .cmp-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #4c6770;
+      border-left: 3px solid #ff5101;
+      padding-left: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .icon-box-teal {
+      width: 44px;
+      height: 44px;
+      background: #1689a6;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-box-teal i {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .step-num {
+      font-size: 0.813rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: #ff5101;
+      margin-bottom: .5rem;
+    }
+
+    .doc-pdf-icon {
+      width: 44px;
+      height: 52px;
+      background: #fff0eb;
+      border: 1px solid #ffd0ba;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .doc-pdf-icon span {
+      font-size: 9px;
+      font-weight: 700;
+      color: #ff5101;
+      letter-spacing: .04em;
+    }
+
+    .doc-pdf-icon i {
+      font-size: 1rem;
+      color: #ff5101;
+    }
+
+    .req-table td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid #d8e7eb;
+      font-size: .938rem;
+    }
+
+    .req-table td:first-child {
+      color: #4c6770;
+      white-space: nowrap;
+      width: 180px;
+    }
+
+    .brand-card {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      backdrop-filter: blur(8px);
+    }
+
+    .srv-img-card {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      min-height: 320px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .srv-img-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 58, 72, .9) 0%, rgba(10, 58, 72, .4) 50%, transparent 100%);
+    }
+
+    .srv-img-card .num-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: .75rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .7);
+      z-index: 2;
+    }
+
+    .srv-img-card .card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      z-index: 2;
+    }
+
+    .circle-img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #fff;
+      box-shadow: 0 0 0 2px #d8e7eb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cmp-nav">
+    <div style="overflow-x:auto; white-space:nowrap; padding: 0 16px">
+      <a href="#about">About</a>
+      <a href="#feature-cards">Feature Cards</a>
+      <a href="#service-img">Service Image</a>
+      <a href="#services-spider">Services Spider</a>
+      <a href="#brands">Brands</a>
+      <a href="#process">Process Steps</a>
+      <a href="#future">Future Cards</a>
+      <a href="#docs">Documents</a>
+      <a href="#requisites">Requisites</a>
+    </div>
+  </div>
+  <!-- 1. ABOUT SECTION -->
+  <section id="about" class="bg-light-sea py-16 py-md-18">
+    <div class="container">
+      <div class="cmp-label">bg-light-sea · cw-subtitle · h1 · p</div>
+      <div class="row">
+        <div class="col-lg-8 col-xl-7">
+          <p class="cw-subtitle text-teal mb-3">
+            <span class="me-2" style="display:inline-block;width:24px;height:2px;background:currentColor;vertical-align:middle;margin-bottom:2px"></span> О компании
+          </p>
+          <h1 class="mb-4">Российская инженерно&#8209;снабженческая компания для судовладельцев</h1>
+          <p class="mb-3">Основная специализация — организация поставки оригинальных запчастей к импортному оборудованию, установленному на <a href="#" class="text-teal">морских</a> и <a href="#" class="text-teal">речных</a> судах любого типа.</p>
+          <p class="mb-3 text-muted">Услуги включают идентификацию, поиск и организацию поставки, обеспечение логистики, таможенное сопровождение и проверку качества расходных материалов, сменно-запасных частей (СЗЧ) и оборудования.</p>
+          <p class="text-muted">Большая база поставщиков у зарубежных партнёрских компаний позволяет оперативно обеспечивать потребности судоходных, сервисных, промышленных и строительных предприятий — в России и за рубежом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 2. FEATURE CARDS -->
+  <section id="feature-cards" class="bg-light-sea py-16">
+    <div class="container">
+      <div class="cmp-label">Feature Cards — white card · cw-subtitle.text-teal · h3 · .text-teal</div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm rounded-3 h-100 p-4">
+            <p class="cw-subtitle text-teal mb-2">Профиль</p>
+            <h3 class="mb-1">Снабжение</h3>
+            <p class="mb-0 text-teal">Судовое СЗЧ и оборудование</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm rounded-3 h-100 p-4">
+            <p class="cw-subtitle text-teal mb-2">География</p>
+            <h3 class="mb-1">РФ + хабы</h3>
+            <p class="mb-0 text-teal">поставки в Россию и за рубеж</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm rounded-3 h-100 p-4">
+            <p class="cw-subtitle text-teal mb-2">Документы</p>
+            <h3 class="mb-1">Полный пакет</h3>
+            <p class="mb-0 text-teal">товаросопроводительные и таможенные</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm rounded-3 h-100 p-4">
+            <p class="cw-subtitle text-teal mb-2">Подход</p>
+            <h3 class="mb-1">Под заявку</h3>
+            <p class="mb-0 text-teal">КП в кратчайшие сроки</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 3. SERVICE IMAGE CARD -->
+  <section id="service-img" class="py-16">
+    <div class="container">
+      <div class="cmp-label">Service image card — bg-image · gradient overlay · title · pills</div>
+      <div class="srv-img-card" style="background-image: url('https://images.unsplash.com/photo-1574154894072-16736a4ef795?w=1200')">
+        <div class="num-badge">01</div>
+        <div class="card-body">
+          <h2 class="text-white mb-3">Двигатели и МКО</h2>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge rounded-pill bg-ghost border border-white border-opacity-25 text-white px-3 py-2">Caterpillar 3500-сер.</span>
+            <span class="badge rounded-pill bg-ghost border border-white border-opacity-25 text-white px-3 py-2">Cummins KTA</span>
+            <span class="badge rounded-pill bg-ghost border border-white border-opacity-25 text-white px-3 py-2">DEUTZ</span>
+            <span class="badge rounded-pill bg-ghost border border-white border-opacity-25 text-white px-3 py-2">MAK M-сер.</span>
+            <span class="badge rounded-pill bg-ghost border border-white border-opacity-25 text-white px-3 py-2">MAN</span>
+            <span class="badge rounded-pill bg-ghost border border-white border-opacity-25 text-white px-3 py-2">Wärtsilä</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 4. SERVICES SPIDER -->
+  <section id="services-spider" class="py-16 bg-light-sea">
+    <div class="container">
+      <div class="cmp-label">Services spider — icon-box-teal · h3 · p · circle-img center</div>
+      <div class="row align-items-center g-5">
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-4">
+            <div class="card border-0 shadow-sm rounded-3 p-4">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="icon-box-teal"><i class="uil uil-layer-group"></i></div>
+                <div>
+                  <h3 class="mb-1">OEM и аналоги</h3>
+                  <p class="mb-0 text-muted">Поставка оригинальных (OEM) и качественных альтернативных запасных частей под задачу.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0 shadow-sm rounded-3 p-4">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="icon-box-teal"><i class="uil uil-apps"></i></div>
+                <div>
+                  <h3 class="mb-1">Подбор по номерам</h3>
+                  <p class="mb-0 text-muted">Идентификация и подбор по каталожным и серийным номерам — без ошибок в спецификации.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0 shadow-sm rounded-3 p-4">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="icon-box-teal"><i class="uil uil-ruble-sign"></i></div>
+                <div>
+                  <h3 class="mb-1">Цена и сроки</h3>
+                  <p class="mb-0 text-muted">Конкурентные цены и оптимальные сроки за счёт прямого доступа к OEM и дистрибьюторам.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center d-none d-lg-block">
+          <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=400" alt="" class="circle-img">
+        </div>
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-4">
+            <div class="card border-0 shadow-sm rounded-3 p-4 text-end">
+              <div class="d-flex gap-3 align-items-start flex-row-reverse">
+                <div class="icon-box-teal"><i class="uil uil-truck"></i></div>
+                <div>
+                  <h3 class="mb-1">Логистика</h3>
+                  <p class="mb-0 text-muted">Международная логистика через проверенные хабы и консолидация грузов в РФ.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0 shadow-sm rounded-3 p-4 text-end">
+              <div class="d-flex gap-3 align-items-start flex-row-reverse">
+                <div class="icon-box-teal"><i class="uil uil-file-alt"></i></div>
+                <div>
+                  <h3 class="mb-1">Документы</h3>
+                  <p class="mb-0 text-muted">Полный комплект товаросопроводительных и таможенных документов.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0 shadow-sm rounded-3 p-4 text-end">
+              <div class="d-flex gap-3 align-items-start flex-row-reverse">
+                <div class="icon-box-teal"><i class="uil uil-headphones-alt"></i></div>
+                <div>
+                  <h3 class="mb-1">Сопровождение</h3>
+                  <p class="mb-0 text-muted">Сопровождение сделки на всех этапах — от заявки до приёмки на объекте.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 5. BRANDS GRID -->
+  <section id="brands" class="has-dark-overlay py-16" style="background: url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=1400') center/cover no-repeat">
+    <div class="container">
+      <div class="cmp-label" style="color:rgba(255,255,255,.5); border-color:rgba(255,255,255,.3)">has-dark-overlay · brand-card</div>
+      <div class="row g-3">
+        <div class="col-4">
+          <div class="brand-card">Caterpillar</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">Wärtsilä</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">Cummins</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">MAN</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">Furuno</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">Kongsberg</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">ABB</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">Schneider Electric</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">Kawasaki</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">Alfa Laval</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">JRC</div>
+        </div>
+        <div class="col-4">
+          <div class="brand-card">Sperry Marine</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 6. PROCESS STEPS -->
+  <section id="process" class="bg-light-sea py-16">
+    <div class="container">
+      <div class="cmp-label">Process steps — step-num.text-primary · h3 · p</div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="step-num">01</div>
+            <h3 class="mb-2">Идентификация</h3>
+            <p class="mb-0 text-muted">Определяем деталь по каталожному / серийному номеру, чертежу или образцу — без ошибок в спецификации.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="step-num">02</div>
+            <h3 class="mb-2">Поиск и закупка</h3>
+            <p class="mb-0 text-muted">Подбираем OEM или качественный аналог по базе зарубежных партнёров, согласуем цену и сроки.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="step-num">03</div>
+            <h3 class="mb-2">Коммерческое предложение</h3>
+            <p class="mb-0 text-muted">Готовим КП под конкретную заявку в кратчайшие сроки с прозрачной структурой стоимости.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="step-num">04</div>
+            <h3 class="mb-2">Логистика</h3>
+            <p class="mb-0 text-muted">Международная логистика через проверенные хабы и консолидация грузов для доставки в РФ.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="step-num">05</div>
+            <h3 class="mb-2">Таможня и качество</h3>
+            <p class="mb-0 text-muted">Таможенное сопровождение и контроль качества расходников, СЗЧ и оборудования.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="step-num">06</div>
+            <h3 class="mb-2">Доставка на объект</h3>
+            <p class="mb-0 text-muted">Доставка на объект заказчика с полным комплектом товаросопроводительных документов.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 7. FUTURE CARDS -->
+  <section id="future" class="bg-light-sea py-16">
+    <div class="container">
+      <div class="cmp-label">Future cards — badge.bg-paper-2.text-teal · h3 · p</div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="mb-3"><span class="badge rounded-pill bg-paper-2 text-teal px-3 py-2 fw-normal">Развиваем</span></div>
+            <h3 class="mb-2">Технический менеджмент</h3>
+            <p class="mb-0 text-muted">Полный технический менеджмент судов, включая крюинг, в сотрудничестве с партнёрами.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="mb-3"><span class="badge rounded-pill bg-paper-2 text-teal px-3 py-2 fw-normal">Развиваем</span></div>
+            <h3 class="mb-2">Сервисное обслуживание</h3>
+            <p class="mb-0 text-muted">Сервис специализированного судового оборудования силами партнёрских сервисных организаций.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-3 p-4 h-100">
+            <div class="mb-3"><span class="badge rounded-pill bg-paper-2 text-teal px-3 py-2 fw-normal">Турция · Китай</span></div>
+            <h3 class="mb-2">Судоремонт</h3>
+            <p class="mb-0 text-muted">Организация и обеспечение ремонтов судов на верфях Турции и в перспективе Китая.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 8. DOCUMENTS -->
+  <section id="docs" class="py-16">
+    <div class="container">
+      <div class="cmp-label">Documents — doc-pdf-icon · cw-subtitle.text-teal · btn-outline</div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card border rounded-3 p-4">
+            <div class="d-flex align-items-center gap-3">
+              <div class="doc-pdf-icon"><i class="uil uil-file"></i><span>PDF</span></div>
+              <div class="flex-grow-1">
+                <p class="cw-subtitle text-teal mb-1">Сертификат</p>
+                <h5 class="mb-1 lh-sm">Свидетельство о государственной регистрации</h5>
+                <p class="mb-0 text-muted" style="font-size:.813rem">PDF · 2,4 МБ</p>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill flex-shrink-0">Скачать <i class="uil uil-import ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border rounded-3 p-4">
+            <div class="d-flex align-items-center gap-3">
+              <div class="doc-pdf-icon"><i class="uil uil-file"></i><span>PDF</span></div>
+              <div class="flex-grow-1">
+                <p class="cw-subtitle text-teal mb-1">Лицензия</p>
+                <h5 class="mb-1 lh-sm">Лицензия на ремонт судового оборудования</h5>
+                <p class="mb-0 text-muted" style="font-size:.813rem">PDF · 1,8 МБ</p>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill flex-shrink-0">Скачать <i class="uil uil-import ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border rounded-3 p-4">
+            <div class="d-flex align-items-center gap-3">
+              <div class="doc-pdf-icon"><i class="uil uil-file"></i><span>PDF</span></div>
+              <div class="flex-grow-1">
+                <p class="cw-subtitle text-teal mb-1">Сертификат</p>
+                <h5 class="mb-1 lh-sm">Сертификат соответствия ISO 9001:2015</h5>
+                <p class="mb-0 text-muted" style="font-size:.813rem">PDF · 3,1 МБ</p>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill flex-shrink-0">Скачать <i class="uil uil-import ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border rounded-3 p-4">
+            <div class="d-flex align-items-center gap-3">
+              <div class="doc-pdf-icon"><i class="uil uil-file"></i><span>PDF</span></div>
+              <div class="flex-grow-1">
+                <p class="cw-subtitle text-teal mb-1">Декларация</p>
+                <h5 class="mb-1 lh-sm">Декларация о соответствии продукции</h5>
+                <p class="mb-0 text-muted" style="font-size:.813rem">PDF · 0,9 МБ</p>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill flex-shrink-0">Скачать <i class="uil uil-import ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 9. REQUISITES -->
+  <section id="requisites" class="py-16 bg-light-sea">
+    <div class="container">
+      <div class="cmp-label">Requisites — bordered card · definition table</div>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card border rounded-3 overflow-hidden">
+            <table class="req-table w-100">
+              <tbody>
+                <tr>
+                  <td>Юр. лицо</td>
+                  <td class="fw-medium text-end">АО «4С-ГРМП»</td>
+                </tr>
+                <tr>
+                  <td>ОГРН</td>
+                  <td class="fw-medium text-end">1257700089350</td>
+                </tr>
+                <tr>
+                  <td>ИНН / КПП</td>
+                  <td class="fw-medium text-end">9734011450 / 772801001</td>
+                </tr>
+                <tr>
+                  <td>Адрес</td>
+                  <td class="fw-medium text-end">117420, Москва, ул. Профсоюзная 57, помещ. 1/3</td>
+                </tr>
+                <tr style="border-bottom:none">
+                  <td>Банк</td>
+                  <td class="fw-medium text-end">ПАО Сбербанк, г. Москва</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="py-6 bg-white text-center text-muted" style="font-size:.75rem"> 4s-group / components.html — src/components.html → dist/components.html </div>
+</body>
+
+</html>
