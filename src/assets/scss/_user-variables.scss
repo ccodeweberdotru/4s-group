@@ -199,6 +199,22 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
 .fs-card-desc  { font-size: $card-desc-font-size;  line-height: 1.55; }
 .fs-scard-desc { font-size: $scard-desc-font-size; line-height: 1.6; }
 
+// ── Adv-card icon box (42×42) ──
+.adv-ico {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  i { font-size: 22px; line-height: 1; }
+}
+
+// ── Spider section center photo ──
+.spider-photo {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
 // ── Adv-card: border always visible, hover bg → white, border-color → line-2 ──
 .card-adv {
   position: relative;
