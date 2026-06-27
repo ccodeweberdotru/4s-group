@@ -7,6 +7,7 @@
 $custom-colors: (
   "teal":        #1689a6,  // --sea-2
   "sea":         #2fb6d0,  // --sea-1
+  "sea-pale":    #9fe3ef,  // --sky-light / eyebrow color on dark bg
   "accent":      #10b6ce,  // --accent
   "navy-dark":   #0a3a48,  // --sea-4 / --drk
   "navy-deep":   #0c5266,  // --sea-3 / --drk2
@@ -112,8 +113,9 @@ $text-line-gap:    0.675rem;  // gap between line and text
 
 // Fix: Bootstrap auto-generates .text-line utility (#d8e7eb) which overrides .text-teal
 // because both use !important — double-class wins by specificity
-.text-teal.text-line  { color: #1689a6 !important; }
-.text-white.text-line { color: #ffffff !important; }
+.text-teal.text-line     { color: #1689a6 !important; }
+.text-white.text-line    { color: #ffffff !important; }
+.text-sea-pale.text-line { color: #9fe3ef !important; &::before { background: #9fe3ef; } }
 
 .text-line { padding-left: ($text-line-width + $text-line-gap) !important; }
 
