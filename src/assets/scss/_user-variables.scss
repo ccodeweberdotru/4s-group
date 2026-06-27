@@ -199,8 +199,14 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
 .fs-card-desc  { font-size: $card-desc-font-size;  line-height: 1.55; }
 .fs-scard-desc { font-size: $scard-desc-font-size; line-height: 1.6; }
 
-// ── Adv-card hover (bg light-sea → white) ──
-.card-adv:hover { background-color: #ffffff !important; }
+// ── Adv-card: border always visible, hover bg → white, border-color → line-2 ──
+.card-adv {
+  border: 1px solid #d8e7eb !important;
+  &:hover {
+    background-color: #ffffff !important;
+    border-color: #c7dce2 !important;  // line-2 on hover (not transparent)
+  }
+}
 
 // ── Brand shadows (navy-dark tones, match --shadow / --shadow-lg) ──
 .shadow-brand    { box-shadow: 0 22px 50px -30px rgba(12, 82, 102, 0.55) !important; }
