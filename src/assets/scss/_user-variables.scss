@@ -226,6 +226,14 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
 // ── Styleguide palette swatch height ──
 .palette-swatch { height: 80px; }
 
+// ── Extra small font-size utility ──
+.fs-14 { font-size: 0.875rem; }  // 14px
+
+// ── img-scroll-wrap aspect ratios (replaces inline height) ──
+.img-scroll-wrap-sq   { aspect-ratio: 5/4; }   // 3-col photo cards
+.img-scroll-wrap-card { aspect-ratio: 16/10; }  // 2-col banner cards
+.img-scroll-wrap-wide { aspect-ratio: 32/9; }   // full-width banner
+
 // ── Badge medium size ──
 .badge-md {
   font-size: 1rem !important;
