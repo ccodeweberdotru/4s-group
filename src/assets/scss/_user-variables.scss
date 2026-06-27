@@ -215,9 +215,18 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
   max-width: 100%;
 }
 
-// ── Ghost card: slightly lighter on hover ──
+// ── Badge medium size ──
+.badge-md {
+  font-size: 0.875rem;
+  padding: 0.4rem 0.875rem;
+}
+
+// ── Ghost card: slightly lighter on hover, border stays visible ──
 .card-ghost {
-  &:hover { background-color: rgba(255, 255, 255, .16) !important; }
+  &:hover {
+    background-color: rgba(255, 255, 255, .16) !important;
+    border-color: rgba(255, 255, 255, .35) !important;
+  }
 }
 
 // ── Adv-card: border always visible, hover bg → white, border-color → line-2 ──
