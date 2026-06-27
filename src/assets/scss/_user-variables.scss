@@ -227,7 +227,8 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
 .palette-swatch { height: 80px; }
 
 // ── Extra small font-size utility ──
-.fs-14 { font-size: 0.875rem; }  // 14px
+.fs-14 { font-size: 14px; }
+.fs-18 { font-size: 18px; }
 
 // ── img-scroll-wrap aspect ratios (replaces inline height) ──
 .img-scroll-wrap-sq   { aspect-ratio: 5/4; }   // 3-col photo cards
