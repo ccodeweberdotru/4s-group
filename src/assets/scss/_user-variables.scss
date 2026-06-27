@@ -228,7 +228,7 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
 
 // ── Badge medium size ──
 .badge-md {
-  font-size: 1rem;
+  font-size: 1rem !important;
   padding: 0.4375rem 1rem;
 }
 
