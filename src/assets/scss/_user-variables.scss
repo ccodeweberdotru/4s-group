@@ -28,7 +28,8 @@ $body-bg:    #ffffff;
 $body-color: #0e2a33;
 
 // ── Borders ──
-$border-color: #d8e7eb;  // line — global light border
+$border-color:      #d8e7eb;  // line — global light border
+$card-border-color: #d8e7eb;  // card border = line color
 
 // ── Muted text ──
 $text-muted: #4c6770;  // brand muted (was Bootstrap #aab0bc)
@@ -153,6 +154,23 @@ $box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
   }
 }
 
+// ── Process step card (pstep): border + lift + orange left bar on hover ──
+.card-pstep {
+  overflow: hidden;
+  border: 1px solid #d8e7eb !important;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #ff5101, #e5490a);
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover::before { transform: scaleY(1); }
+}
+
 // ── Overlay color — navy-dark (#0a3a48) instead of default gray-900 ──
 .overlay .bottom-overlay::after {
   background: linear-gradient(to top, rgba(#0a3a48, 0.85) 0%, rgba(#0a3a48, 0.55) 50%, transparent 100%);
@@ -176,8 +194,17 @@ $box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
 }
 
 // ── Card component classes ──
-$card-desc-font-size: 0.906rem;  // 14.5px — description text in adv-cards
-.fs-card-desc { font-size: $card-desc-font-size; line-height: 1.55; }
+$card-desc-font-size:  0.906rem;    // 14.5px — adv-card description (orig .adv-card p)
+$scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (orig .scard p / .pstep p)
+.fs-card-desc  { font-size: $card-desc-font-size;  line-height: 1.55; }
+.fs-scard-desc { font-size: $scard-desc-font-size; line-height: 1.6; }
+
+// ── Adv-card hover (bg light-sea → white) ──
+.card-adv:hover { background-color: #ffffff !important; }
+
+// ── Brand shadows (navy-dark tones, match --shadow / --shadow-lg) ──
+.shadow-brand    { box-shadow: 0 22px 50px -30px rgba(12, 82, 102, 0.55) !important; }
+.shadow-brand-lg { box-shadow: 0 40px 90px -40px rgba(10, 58, 72, 0.60) !important; }
 
 // ── Cell component (compact info card: label / title / desc) ──
 .cw-cell { padding: 0.8125rem 0.9375rem !important; }  // 13px 15px
