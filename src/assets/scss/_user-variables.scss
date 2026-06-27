@@ -120,6 +120,11 @@ $text-line-gap:    0.675rem;  // gap between line and text
 
 .text-line { padding-left: ($text-line-width + $text-line-gap) !important; }
 
+// ── Unordered list ──
+$unordered-list-padding-left:  1.4rem;
+$unordered-list-dot-font-size: 1.8rem;
+.unordered-list > li::before { line-height: 1.11; }
+
 // ── Navigation ──
 $nav-link-font-size:   0.938rem;  // 15px (was 0.8rem)
 $nav-link-font-weight: 500;       // (was 700)
