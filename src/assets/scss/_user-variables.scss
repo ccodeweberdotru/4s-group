@@ -201,10 +201,12 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
 
 // ── Adv-card: border always visible, hover bg → white, border-color → line-2 ──
 .card-adv {
+  position: relative;
   border: 1px solid #d8e7eb !important;
   &:hover {
     background-color: #ffffff !important;
     border-color: #c7dce2 !important;  // line-2 on hover (not transparent)
+    z-index: 1;
   }
 }
 
