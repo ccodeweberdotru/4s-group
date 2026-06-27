@@ -56,8 +56,7 @@ if ($terms && !is_wp_error($terms)) {
     $type_label = $terms[0]->name;
 }
 ?>
-<div class="card card-docs
-  card-interactive card-lift border rounded-3 h-100">
+<div class="card card-docs card-interactive card-lift card-border-left border rounded-3 p-7 h-100">
             <div class="d-flex align-items-center gap-3">
               <div class="bg-primary bg-opacity-10 rounded-2 text-center p-3 flex-shrink-0 text-primary lh-1">
                 <i class="uil uil-file fs-30 d-block"></i>
@@ -66,7 +65,7 @@ if ($terms && !is_wp_error($terms)) {
               <div class="flex-grow-1">
                 <?php if ($type_label) : ?><p class="cw-subtitle text-teal mb-1"><?php echo esc_html($type_label); ?></p><?php endif; ?>
                 <h5 class="mb-1 lh-sm"><?php echo esc_html($title); ?></h5>
-                <?php if ($file_meta) : ?><p class="mb-0 text-muted fs-sm"><?php echo esc_html($file_meta); ?></p><?php endif; ?>
+                <?php if ($file_meta) : ?><p class="mb-0 text-muted fs-card-desc"><?php echo esc_html($file_meta); ?></p><?php endif; ?>
               </div>
               <?php if ($file_url) : ?>
               <a href="javascript:void(0)" class="btn btn-sm btn-outline-secondary rounded-pill flex-shrink-0" data-value="doc-<?php echo esc_attr($post_data['id']); ?>" data-bs-toggle="download"><span><?php esc_html_e('Download', 'codeweber'); ?></span> <i class="uil uil-import ms-1"></i></a>
