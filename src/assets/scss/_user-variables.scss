@@ -226,23 +226,6 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
   }
 }
 
-// ── Reusable left-bar hover effect (orange scaleY slide-in from top) ──
-.card-border-left {
-  position: relative;
-  overflow: hidden;
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: linear-gradient(180deg, #ff5101, #e5490a);
-    transform: scaleY(0);
-    transform-origin: top center;
-    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  &:hover::before { transform: scaleY(1); }
-}
-
 // ── Brand shadows (navy-dark tones, match --shadow / --shadow-lg) ──
 .shadow-brand    { box-shadow: 0 22px 50px -30px rgba(12, 82, 102, 0.55) !important; }
 .shadow-brand-lg { box-shadow: 0 40px 90px -40px rgba(10, 58, 72, 0.60) !important; }
@@ -343,6 +326,24 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
     border-color: #ff5101;
     color: #ffffff;
   }
+}
+
+// ── Reusable left-bar hover effect (orange scaleY slide-in from top) ──
+// Placed after .card-docs so it overrides .card-docs::before when combined
+.card-border-left {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #ff5101, #e5490a);
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover::before { transform: scaleY(1); }
 }
 
 //START IMPORT FONTS
