@@ -19,14 +19,31 @@ if ( ! isset( $term ) || ! $term ) {
 }
 
 $template_args = wp_parse_args( $template_args ?? [], [
-	'hover_classes'   => 'overlay overlay-5 color',
-	'border_radius'   => Codeweber_Options::style( 'card-radius' ) ?: 'rounded',
-	'show_figcaption' => true,
-	'enable_lift'     => false,
-	'show_card_arrow' => true,
-	'card_read_more'  => 'none',
-	'show_term_count' => false,
+	'hover_classes'    => 'overlay overlay-5 color',
+	'border_radius'    => Codeweber_Options::style( 'card-radius' ) ?: 'rounded',
+	'show_figcaption'  => true,
+	'enable_lift'      => false,
+	'show_card_arrow'  => true,
+	'card_read_more'   => 'none',
+	'show_term_count'  => false,
+	'badges_post_type' => '', // CPT for badge chips — empty = disabled
+	'badges_max'       => 6,
 ] );
+
+// Query badge posts if badges_post_type is set
+$badge_posts = [];
+if ( ! empty( $template_args['badges_post_type'] ) ) {
+	$badge_posts = get_posts( [
+		'post_type'      => sanitize_key( $template_args['badges_post_type'] ),
+		'posts_per_page' => (int) $template_args['badges_max'],
+		'post_status'    => 'publish',
+		'tax_query'      => [ [
+			'taxonomy' => $term->taxonomy,
+			'field'    => 'term_id',
+			'terms'    => $term->term_id,
+		] ],
+	] );
+}
 
 $article_class = ! empty( $template_args['enable_lift'] ) ? 'lift' : '';
 
@@ -78,6 +95,16 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 							</<?php echo esc_attr( $title_tag ); ?>>
 						</div>
 					<?php endif; ?>
+
+					<?php if ( ! empty( $badge_posts ) ) : ?>
+						<div class="d-flex flex-wrap gap-2 mt-3">
+							<?php foreach ( $badge_posts as $badge_post ) : ?>
+								<span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">
+									<?php echo esc_html( $badge_post->post_title ); ?>
+								</span>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
 				</div>
 				<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>" class="<?php echo esc_attr( $template_args['border_radius'] ); ?>">
 			</a>
@@ -119,6 +146,16 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 							<<?php echo esc_attr( $title_tag ); ?> class="<?php echo esc_attr( $title_class ); ?>">
 								<?php echo empty( $display['use_html_title'] ) ? esc_html( $title ) : wp_kses_post( $title ); ?>
 							</<?php echo esc_attr( $title_tag ); ?>>
+						</div>
+					<?php endif; ?>
+
+					<?php if ( ! empty( $badge_posts ) ) : ?>
+						<div class="d-flex flex-wrap gap-2 mt-3">
+							<?php foreach ( $badge_posts as $badge_post ) : ?>
+								<span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">
+									<?php echo esc_html( $badge_post->post_title ); ?>
+								</span>
+							<?php endforeach; ?>
 						</div>
 					<?php endif; ?>
 				</div>
