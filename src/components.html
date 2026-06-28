@@ -470,98 +470,186 @@
 ════════════════════════════════════════════ -->
 <section id="category-banner" class="py-16">
   <div class="container">
-    <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-4">overlay overlay-5 · rounded-3 · figcaption · pill badges</p>
+    <p class="cw-subtitle text-muted border-start border-3 border-primary ps-2 mb-4">overlay overlay-5 · CSS grid · figcaption · pill badges</p>
 
-    <!-- Одиночный баннер — широкий -->
-    <figure class="overlay overlay-5 rounded-3 card-interactive mb-3">
-      <a href="#">
-        <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5">
-          <div class="mt-auto position-relative zindex-2">
-            <p class="text-white-50 small mb-2 fw-bold">01</p>
-            <p class="cw-card-title-md text-white mb-3">Двигатели и МКО</p>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Caterpillar 3500-сер.</span>
-              <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Cummins KTA</span>
-              <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">DEUTZ</span>
-              <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">MAK M-сер.</span>
-              <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">MAN</span>
-              <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Wärtsilä</span>
-            </div>
-          </div>
-        </div>
-        <div class="img-scroll-wrap img-scroll-wrap-wide" data-cw-scroll-init="1">
-          <img src="../../codeweber/dist/assets/img/photos/p4.jpg" srcset="../../codeweber/dist/assets/img/photos/p4@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
-        </div>
-      </a>
-      <figcaption class="p-5">
-        <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
-          <p class="mb-0 fs-18 text-white-75">Дизельные двигатели, генераторные установки, ЗИП главных двигателей и вспомогательного оборудования МКО.</p>
-        </div>
-      </figcaption>
-      <div class="hover_card_button_hide position-absolute top-0 end-0 p-5 zindex-10">
-        <i class="fs-25 uil uil-arrow-right lh-1"></i>
-      </div>
-    </figure>
+    <div class="svc-grid">
 
-    <!-- Сетка баннеров 2 колонки -->
-    <div class="row g-3">
-      <div class="col-md-6">
-        <figure class="overlay overlay-5 rounded-3 card-interactive mb-0">
-          <a href="#">
-            <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-4">
-              <div class="mt-auto position-relative zindex-2">
-                <p class="text-white-50 small mb-2 fw-bold">02</p>
-                <p class="cw-card-title-md text-white mb-3">Палубное оборудование</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Лебёдки</span>
-                  <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Якорные цепи</span>
-                  <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Швартовное</span>
-                </div>
+      <!-- 01 BIG — Двигатели и МКО (3 кол, 2 ряда) -->
+      <figure class="overlay overlay-5 rounded-3 card-interactive tile-big">
+        <a href="#">
+          <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5">
+            <div class="mt-auto position-relative zindex-2">
+              <p class="text-white-50 small mb-2 fw-bold">01</p>
+              <p class="cw-card-title-lg text-white mb-3">Двигатели и МКО</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Caterpillar 3500-сер.</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Cummins KTA</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">DEUTZ</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">MAK M-сер.</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">MAN</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Wärtsilä</span>
               </div>
             </div>
-            <div class="img-scroll-wrap img-scroll-wrap-card" data-cw-scroll-init="1">
-              <img src="../../codeweber/dist/assets/img/photos/p5.jpg" srcset="../../codeweber/dist/assets/img/photos/p5@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
-            </div>
-          </a>
-          <figcaption class="p-4">
-            <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
-              <p class="mb-0 fs-18 text-white-75">Лебёдки, якорные цепи и швартовное оборудование ведущих производителей.</p>
-            </div>
-          </figcaption>
-          <div class="hover_card_button_hide position-absolute top-0 end-0 p-4 zindex-10">
-            <i class="fs-25 uil uil-arrow-right lh-1"></i>
           </div>
-        </figure>
-      </div>
-      <div class="col-md-6">
-        <figure class="overlay overlay-5 rounded-3 card-interactive mb-0">
-          <a href="#">
-            <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-4">
-              <div class="mt-auto position-relative zindex-2">
-                <p class="text-white-50 small mb-2 fw-bold">03</p>
-                <p class="cw-card-title-md text-white mb-3">Навигационное оборудование</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Furuno</span>
-                  <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">JRC</span>
-                  <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Koden</span>
-                </div>
+          <div class="img-scroll-wrap" data-cw-scroll-init="1">
+            <img src="../../codeweber/dist/assets/img/photos/p4.jpg" srcset="../../codeweber/dist/assets/img/photos/p4@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
+          </div>
+          <span class="bg"></span>
+        </a>
+        <figcaption class="p-5">
+          <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
+            <p class="mb-0 fs-18 text-white-75">Дизельные двигатели, генераторные установки, ЗИП главных двигателей и вспомогательного оборудования МКО.</p>
+          </div>
+        </figcaption>
+        <div class="hover_card_button_hide position-absolute top-0 end-0 p-5 zindex-10">
+          <i class="fs-25 uil uil-arrow-right lh-1"></i>
+        </div>
+      </figure>
+
+      <!-- 02 MED — Палубное оборудование -->
+      <figure class="overlay overlay-5 rounded-3 card-interactive tile-med">
+        <a href="#">
+          <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-4">
+            <div class="mt-auto position-relative zindex-2">
+              <p class="text-white-50 small mb-2 fw-bold">02</p>
+              <p class="cw-card-title-md text-white mb-3">Палубное оборудование</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Лебёдки</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Якорные цепи</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Швартовное</span>
               </div>
             </div>
-            <div class="img-scroll-wrap img-scroll-wrap-card" data-cw-scroll-init="1">
-              <img src="../../codeweber/dist/assets/img/photos/p6.jpg" srcset="../../codeweber/dist/assets/img/photos/p6@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
-            </div>
-          </a>
-          <figcaption class="p-4">
-            <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
-              <p class="mb-0 fs-18 text-white-75">Радары, эхолоты, AIS и навигационные комплексы для морского флота.</p>
-            </div>
-          </figcaption>
-          <div class="hover_card_button_hide position-absolute top-0 end-0 p-4 zindex-10">
-            <i class="fs-25 uil uil-arrow-right lh-1"></i>
           </div>
-        </figure>
-      </div>
-      </div>
+          <div class="img-scroll-wrap" data-cw-scroll-init="1">
+            <img src="../../codeweber/dist/assets/img/photos/p5.jpg" srcset="../../codeweber/dist/assets/img/photos/p5@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
+          </div>
+          <span class="bg"></span>
+        </a>
+        <figcaption class="p-4">
+          <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
+            <p class="mb-0 fs-18 text-white-75">Лебёдки, якорные цепи и швартовное оборудование ведущих производителей.</p>
+          </div>
+        </figcaption>
+        <div class="hover_card_button_hide position-absolute top-0 end-0 p-4 zindex-10">
+          <i class="fs-25 uil uil-arrow-right lh-1"></i>
+        </div>
+      </figure>
+
+      <!-- 03 MED — Судовые системы -->
+      <figure class="overlay overlay-5 rounded-3 card-interactive tile-med">
+        <a href="#">
+          <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-4">
+            <div class="mt-auto position-relative zindex-2">
+              <p class="text-white-50 small mb-2 fw-bold">03</p>
+              <p class="cw-card-title-md text-white mb-3">Судовые системы</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Осушительные</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Балластные</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Пожарные</span>
+              </div>
+            </div>
+          </div>
+          <div class="img-scroll-wrap" data-cw-scroll-init="1">
+            <img src="../../codeweber/dist/assets/img/photos/p6.jpg" srcset="../../codeweber/dist/assets/img/photos/p6@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
+          </div>
+          <span class="bg"></span>
+        </a>
+        <figcaption class="p-4">
+          <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
+            <p class="mb-0 fs-18 text-white-75">Насосы, трубопроводная арматура и системы управления судовых трубопроводов.</p>
+          </div>
+        </figcaption>
+        <div class="hover_card_button_hide position-absolute top-0 end-0 p-4 zindex-10">
+          <i class="fs-25 uil uil-arrow-right lh-1"></i>
+        </div>
+      </figure>
+
+      <!-- 04 SM — Навигационное оборудование -->
+      <figure class="overlay overlay-5 rounded-3 card-interactive tile-sm">
+        <a href="#">
+          <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-4">
+            <div class="mt-auto position-relative zindex-2">
+              <p class="text-white-50 small mb-2 fw-bold">04</p>
+              <p class="cw-card-title text-white mb-3">Навигация</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Furuno</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">JRC</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Koden</span>
+              </div>
+            </div>
+          </div>
+          <div class="img-scroll-wrap" data-cw-scroll-init="1">
+            <img src="../../codeweber/dist/assets/img/photos/p1.jpg" srcset="../../codeweber/dist/assets/img/photos/p1@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
+          </div>
+          <span class="bg"></span>
+        </a>
+        <figcaption class="p-4">
+          <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
+            <p class="mb-0 fs-18 text-white-75">Радары, эхолоты, AIS и навигационные комплексы для морского флота.</p>
+          </div>
+        </figcaption>
+        <div class="hover_card_button_hide position-absolute top-0 end-0 p-4 zindex-10">
+          <i class="fs-25 uil uil-arrow-right lh-1"></i>
+        </div>
+      </figure>
+
+      <!-- 05 SM — Запасные части и ЗИП -->
+      <figure class="overlay overlay-5 rounded-3 card-interactive tile-sm">
+        <a href="#">
+          <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-4">
+            <div class="mt-auto position-relative zindex-2">
+              <p class="text-white-50 small mb-2 fw-bold">05</p>
+              <p class="cw-card-title text-white mb-3">Запчасти и ЗИП</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Фильтры</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Подшипники</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Прокладки</span>
+              </div>
+            </div>
+          </div>
+          <div class="img-scroll-wrap" data-cw-scroll-init="1">
+            <img src="../../codeweber/dist/assets/img/photos/p2.jpg" srcset="../../codeweber/dist/assets/img/photos/p2@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
+          </div>
+          <span class="bg"></span>
+        </a>
+        <figcaption class="p-4">
+          <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
+            <p class="mb-0 fs-18 text-white-75">Оригинальные и сертифицированные аналоги запчастей для главных и вспомогательных двигателей.</p>
+          </div>
+        </figcaption>
+        <div class="hover_card_button_hide position-absolute top-0 end-0 p-4 zindex-10">
+          <i class="fs-25 uil uil-arrow-right lh-1"></i>
+        </div>
+      </figure>
+
+      <!-- 06 SM — Судоремонт и сервис -->
+      <figure class="overlay overlay-5 rounded-3 card-interactive tile-sm">
+        <a href="#">
+          <div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-4">
+            <div class="mt-auto position-relative zindex-2">
+              <p class="text-white-50 small mb-2 fw-bold">06</p>
+              <p class="cw-card-title text-white mb-3">Судоремонт</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Дефектация</span>
+                <span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">Ремонт МКО</span>
+              </div>
+            </div>
+          </div>
+          <div class="img-scroll-wrap" data-cw-scroll-init="1">
+            <img src="../../codeweber/dist/assets/img/photos/p3.jpg" srcset="../../codeweber/dist/assets/img/photos/p3@2x.jpg 2x" alt="" class="w-100 h-100 object-fit-cover img-scroll">
+          </div>
+          <span class="bg"></span>
+        </a>
+        <figcaption class="p-4">
+          <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
+            <p class="mb-0 fs-18 text-white-75">Дефектация, ремонт и техническое обслуживание главных двигателей и систем МКО в порту и на борту.</p>
+          </div>
+        </figcaption>
+        <div class="hover_card_button_hide position-absolute top-0 end-0 p-4 zindex-10">
+          <i class="fs-25 uil uil-arrow-right lh-1"></i>
+        </div>
+      </figure>
+
     </div>
   </div>
 </section>
