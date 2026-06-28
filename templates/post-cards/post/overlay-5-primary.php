@@ -1,115 +1,108 @@
 <?php
 /**
- * Template: Overlay-5 Primary Post Card
+ * Template: Overlay-5 Primary Post Card (4s-group child theme override)
  *
- * Полный аналог post/overlay-5.php — отличается только классом .color на figure,
- * который делает overlay при hover primary-цветным вместо тёмного.
+ * Tile-big вариант с img-scroll, бейджами тегов и цифровым индексом.
  *
- * @param array $post_data Данные поста
+ * @param array $post_data        Данные поста
  * @param array $display_settings Настройки отображения
- * @param array $template_args Дополнительные аргументы
+ * @param array $template_args    Дополнительные аргументы
  */
 
-if (!isset($post_data) || !$post_data) {
-    return;
+if ( ! isset( $post_data ) || ! $post_data ) {
+	return;
 }
 
-$display = cw_get_post_card_display_settings($display_settings ?? []);
-$template_args = wp_parse_args($template_args ?? [], [
-    'hover_classes'   => 'overlay overlay-5 color',
-    'border_radius'   => Codeweber_Options::style('card-radius') ?: 'rounded',
-    'show_figcaption' => true,
-    'enable_lift'     => false,
-    'show_card_arrow' => true,
-    'card_read_more'  => 'more', // none | view | more | read
-]);
-
-$article_class = !empty($template_args['enable_lift']) ? 'lift' : '';
-
-// Build localized read-more label (translatable — no Cyrillic source strings).
-$read_more_labels = [
-    'view'    => __( 'View',       'codeweber' ),
-    'more'    => __( 'Read more',  'codeweber' ),
-    'read'    => __( 'Read',       'codeweber' ),
-    'go'      => __( 'Go',         'codeweber' ),
-    'open'    => __( 'Open',       'codeweber' ),
-    'details' => __( 'Details',    'codeweber' ),
-    'learn'   => __( 'Learn more', 'codeweber' ),
-    'buy'     => __( 'Buy',        'codeweber' ),
-    'order'   => __( 'Order',      'codeweber' ),
-];
-$read_more_label = isset($read_more_labels[$template_args['card_read_more']])
-    ? $read_more_labels[$template_args['card_read_more']]
-    : '';
+$display       = cw_get_post_card_display_settings( $display_settings ?? [] );
+$template_args = wp_parse_args( $template_args ?? [], [
+	'hover_classes'   => 'overlay overlay-5',
+	'border_radius'   => 'rounded-3',
+	'tile_class'      => 'tile-big',
+	'show_figcaption' => true,
+	'show_card_arrow' => true,
+	'index'           => '',         // e.g. '01', '02' — цифра над заголовком
+	'tags_taxonomy'   => 'post_tag', // таксономия для бейджей
+	'max_tags'        => 6,
+] );
 
 $title = $post_data['title'];
-if ($display['title_length'] > 0 && mb_strlen($title) > $display['title_length']) {
-    $title = mb_substr($title, 0, $display['title_length']) . '...';
+if ( $display['title_length'] > 0 && mb_strlen( $title ) > $display['title_length'] ) {
+	$title = mb_substr( $title, 0, $display['title_length'] ) . '...';
 }
 
 $excerpt = '';
-if (!empty($display['show_excerpt']) && $display['excerpt_length'] > 0) {
-    $excerpt_plain = wp_strip_all_tags($post_data['excerpt']);
-    $word_count = count(preg_split('/\s+/', trim($excerpt_plain), -1, PREG_SPLIT_NO_EMPTY));
-    if ($word_count <= $display['excerpt_length']) {
-        $excerpt = $post_data['excerpt'];
-    } else {
-        $excerpt = wp_trim_words($excerpt_plain, $display['excerpt_length'], '...');
-    }
+if ( ! empty( $display['show_excerpt'] ) && $display['excerpt_length'] > 0 ) {
+	$excerpt_plain = wp_strip_all_tags( $post_data['excerpt'] );
+	$word_count    = count( preg_split( '/\s+/', trim( $excerpt_plain ), -1, PREG_SPLIT_NO_EMPTY ) );
+	if ( $word_count <= $display['excerpt_length'] ) {
+		$excerpt = $post_data['excerpt'];
+	} else {
+		$excerpt = wp_trim_words( $excerpt_plain, $display['excerpt_length'], '...' );
+	}
 }
 
-// Формируем тег и классы для заголовка
-$title_tag = isset($display['title_tag']) ? sanitize_html_class($display['title_tag']) : 'h2';
-if (!empty($display['title_class'])) {
-    $title_class = esc_attr($display['title_class']);
-} else {
-    $title_class = 'h5 mb-0';
+$tags = [];
+if ( ! empty( $template_args['tags_taxonomy'] ) ) {
+	$terms = wp_get_post_terms( $post_data['id'], $template_args['tags_taxonomy'], [
+		'number' => (int) $template_args['max_tags'],
+	] );
+	if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+		$tags = $terms;
+	}
 }
 
-// Форматируем дату для badge
-$date_badge = get_the_date('d M Y', $post_data['id']);
+$figure_class = trim(
+	$template_args['hover_classes'] . ' ' .
+	$template_args['border_radius'] . ' ' .
+	'card-interactive ' .
+	$template_args['tile_class']
+);
 ?>
 
-<article<?php echo $article_class ? ' class="' . esc_attr($article_class) . '"' : ''; ?>>
-    <?php if ($post_data['image_url']) : ?>
-        <figure class="<?php echo esc_attr($template_args['hover_classes'] . ' ' . $template_args['border_radius']); ?> card-interactive">
-            <a href="<?php echo esc_url($post_data['link']); ?>">
-                <div class="bottom-overlay post-meta fs-16 position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5">
-                    <?php if ($display['show_date']) : ?>
-                        <div class="d-flex w-100 justify-content-end">
-                            <span class="post-date badge bg-primary rounded-pill"><?php echo esc_html($date_badge); ?></span>
-                        </div>
-                    <?php endif; ?>
+<figure class="<?php echo esc_attr( $figure_class ); ?>">
+	<a href="<?php echo esc_url( $post_data['link'] ); ?>">
+		<div class="bottom-overlay post-meta position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5">
+			<div class="mt-auto position-relative zindex-2">
+				<?php if ( ! empty( $template_args['index'] ) ) : ?>
+					<p class="text-white-50 small mb-2 fw-bold"><?php echo esc_html( $template_args['index'] ); ?></p>
+				<?php endif; ?>
 
-                    <?php if ($display['show_title']) : ?>
-                        <div class="mt-auto">
-                            <<?php echo esc_attr($title_tag); ?> class="<?php echo esc_attr(trim($title_class)); ?>">
-                                <?php echo empty($display['use_html_title']) ? esc_html($title) : wp_kses_post($title); ?>
-                            </<?php echo esc_attr($title_tag); ?>>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <img src="<?php echo esc_url($post_data['image_url']); ?>" alt="<?php echo esc_attr($post_data['image_alt']); ?>" class="<?php echo esc_attr($template_args['border_radius']); ?>">
-            </a>
+				<?php if ( $display['show_title'] && $title ) : ?>
+					<p class="cw-card-title-lg text-white mb-3"><?php echo esc_html( $title ); ?></p>
+				<?php endif; ?>
 
-            <?php if ($template_args['show_figcaption']) : ?>
-                <figcaption class="p-5">
-                    <div class="post-body h-100 d-flex flex-column from-left justify-content-end">
-                        <?php if ($excerpt) : ?>
-                            <p class="mb-3<?php echo !empty($display['excerpt_hide_mobile']) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses($excerpt, ['br' => []]); ?></p>
-                        <?php endif; ?>
-                        <?php if ($read_more_label) : ?>
-                            <span class="hover more me-4"><?php echo esc_html($read_more_label); ?></span>
-                        <?php endif; ?>
-                    </div>
-                </figcaption>
-            <?php endif; ?>
+				<?php if ( ! empty( $tags ) ) : ?>
+					<div class="d-flex flex-wrap gap-2">
+						<?php foreach ( $tags as $tag ) : ?>
+							<span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">
+								<?php echo esc_html( $tag->name ); ?>
+							</span>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
 
-            <?php if (!empty($template_args['show_card_arrow'])) : ?>
-                <div class="hover_card_button_hide position-absolute top-0 end-0 p-5 zindex-10">
-                    <i class="fs-25 uil uil-arrow-right lh-1"></i>
-                </div>
-            <?php endif; ?>
-        </figure>
-    <?php endif; ?>
-</article>
+		<?php if ( $post_data['image_url'] ) : ?>
+			<div class="img-scroll-wrap" data-cw-scroll-init="1">
+				<img src="<?php echo esc_url( $post_data['image_url'] ); ?>"
+				     alt="<?php echo esc_attr( $post_data['image_alt'] ); ?>"
+				     class="w-100 h-100 object-fit-cover img-scroll">
+			</div>
+		<?php endif; ?>
+	</a>
+
+	<?php if ( $template_args['show_figcaption'] && $excerpt ) : ?>
+		<figcaption class="p-5">
+			<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
+				<p class="mb-0 fs-18 text-white-75"><?php echo wp_kses( $excerpt, [ 'br' => [] ] ); ?></p>
+			</div>
+		</figcaption>
+	<?php endif; ?>
+
+	<?php if ( ! empty( $template_args['show_card_arrow'] ) ) : ?>
+		<div class="hover_card_button_hide position-absolute top-0 end-0 p-5 zindex-10">
+			<i class="fs-25 uil uil-arrow-right lh-1"></i>
+		</div>
+	<?php endif; ?>
+</figure>
