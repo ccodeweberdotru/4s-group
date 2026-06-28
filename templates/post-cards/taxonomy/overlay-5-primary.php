@@ -98,7 +98,7 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 					<?php if ( ! empty( $badge_posts ) ) : ?>
 						<div class="d-flex flex-wrap gap-2 mt-3">
 							<?php foreach ( $badge_posts as $badge_post ) : ?>
-								<span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">
+								<span class="badge badge-4s rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">
 									<?php echo esc_html( $badge_post->post_title ); ?>
 								</span>
 							<?php endforeach; ?>
@@ -151,7 +151,7 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 					<?php if ( ! empty( $badge_posts ) ) : ?>
 						<div class="d-flex flex-wrap gap-2 mt-3">
 							<?php foreach ( $badge_posts as $badge_post ) : ?>
-								<span class="badge badge-md rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">
+								<span class="badge badge-4s rounded-pill bg-white bg-opacity-25 border border-white border-opacity-50 text-white">
 									<?php echo esc_html( $badge_post->post_title ); ?>
 								</span>
 							<?php endforeach; ?>

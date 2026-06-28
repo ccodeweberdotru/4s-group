@@ -399,6 +399,14 @@ $scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (ori
   &:hover::before { transform: scaleY(1); }
 }
 
+// ── Custom badge modifier ──
+.badge-4s {
+    --bs-badge-font-size: 12px;
+    --bs-badge-padding-y: 9px;
+    --bs-badge-padding-x: 16px;
+    --bs-badge-font-weight: 600;
+}
+
 //START IMPORT FONTS
 $path-to-fonts: 'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700';
 //END IMPORT FONTS
