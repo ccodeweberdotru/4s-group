@@ -108,7 +108,7 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 				<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>" class="<?php echo esc_attr( $template_args['border_radius'] ); ?>">
 			</a>
 
-			<?php if ( $template_args['show_figcaption'] && ( $excerpt || $read_more_label || $template_args['show_term_count'] ) ) : ?>
+			<?php if ( $template_args['show_figcaption'] && ( $excerpt || $template_args['show_term_count'] ) ) : ?>
 				<figcaption class="p-5">
 					<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
 						<?php if ( $excerpt ) : ?>
@@ -122,9 +122,6 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 									$term->count
 								) ); ?>
 							</p>
-						<?php endif; ?>
-						<?php if ( $read_more_label ) : ?>
-							<span class="hover more me-4"><?php echo esc_html( $read_more_label ); ?></span>
 						<?php endif; ?>
 					</div>
 				</figcaption>
@@ -161,7 +158,7 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 				<img src="<?php echo esc_url( get_template_directory_uri() . '/dist/assets/img/image-placeholder.jpg' ); ?>" alt="" class="<?php echo esc_attr( $template_args['border_radius'] ); ?>">
 			</a>
 
-			<?php if ( $template_args['show_figcaption'] && ( $excerpt || $read_more_label || $template_args['show_term_count'] ) ) : ?>
+			<?php if ( $template_args['show_figcaption'] && ( $excerpt || $template_args['show_term_count'] ) ) : ?>
 				<figcaption class="p-5">
 					<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
 						<?php if ( $excerpt ) : ?>
@@ -175,9 +172,6 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 									$term->count
 								) ); ?>
 							</p>
-						<?php endif; ?>
-						<?php if ( $read_more_label ) : ?>
-							<span class="hover more me-4"><?php echo esc_html( $read_more_label ); ?></span>
 						<?php endif; ?>
 					</div>
 				</figcaption>
