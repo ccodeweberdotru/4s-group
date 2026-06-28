@@ -79,7 +79,7 @@ if ( ! empty( $display['show_excerpt'] ) && ! empty( $term->description ) ) {
 }
 
 $title_tag   = isset( $display['title_tag'] ) ? sanitize_html_class( $display['title_tag'] ) : 'h2';
-$title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_class'] ) : 'h5 mb-0';
+$title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_class'] ) : 'h5 mb-3 fw-semibold';
 ?>
 
 <article<?php echo $article_class ? ' class="' . esc_attr( $article_class ) . '"' : ''; ?>>
