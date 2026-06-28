@@ -89,3 +89,11 @@
 
 // ── H1: slightly looser line-height than h2/h3 ──
 h1 { line-height: 1.12; }
+
+// ── Badge modifier for term cards ──
+.badge-4s {
+  --bs-badge-font-size: 12px;
+  --bs-badge-padding-y: 9px;
+  --bs-badge-padding-x: 16px;
+  --bs-badge-font-weight: 600;
+}
