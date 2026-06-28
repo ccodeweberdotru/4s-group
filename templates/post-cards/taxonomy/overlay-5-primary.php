@@ -19,26 +19,25 @@ if ( ! isset( $term ) || ! $term ) {
 }
 
 $template_args = wp_parse_args( $template_args ?? [], [
-	'hover_classes'    => 'overlay overlay-5 color',
-	'border_radius'    => Codeweber_Options::style( 'card-radius' ) ?: 'rounded',
-	'show_figcaption'  => true,
-	'enable_lift'      => false,
-	'show_card_arrow'  => true,
-	'card_read_more'   => 'none',
-	'show_term_count'  => false,
-	'badges_post_type' => '', // CPT for badge chips — empty = disabled
-	'badges_max'       => 6,
+	'hover_classes'   => 'overlay overlay-5 color',
+	'border_radius'   => Codeweber_Options::style( 'card-radius' ) ?: 'rounded',
+	'show_figcaption' => true,
+	'enable_lift'     => false,
+	'show_card_arrow' => true,
+	'card_read_more'  => 'none',
+	'show_term_count' => false,
+	'badges_max'      => 6,
 ] );
 
-// Query badge posts if badges_post_type is set
+// Query clients belonging to this term
 $badge_posts = [];
-if ( ! empty( $template_args['badges_post_type'] ) ) {
+if ( $term->taxonomy === 'clients_category' ) {
 	$badge_posts = get_posts( [
-		'post_type'      => sanitize_key( $template_args['badges_post_type'] ),
+		'post_type'      => 'clients',
 		'posts_per_page' => (int) $template_args['badges_max'],
 		'post_status'    => 'publish',
 		'tax_query'      => [ [
-			'taxonomy' => $term->taxonomy,
+			'taxonomy' => 'clients_category',
 			'field'    => 'term_id',
 			'terms'    => $term->term_id,
 		] ],
