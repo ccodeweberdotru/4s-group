@@ -80,6 +80,8 @@ if ( ! empty( $display['show_excerpt'] ) && ! empty( $term->description ) ) {
 
 $title_tag   = isset( $display['title_tag'] ) ? sanitize_html_class( $display['title_tag'] ) : 'h2';
 $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_class'] ) : 'h5 mb-3 fw-semibold';
+
+$card_index = get_term_meta( $term->term_id, 'card_index', true );
 ?>
 
 <article<?php echo $article_class ? ' class="' . esc_attr( $article_class ) . '"' : ''; ?>>
@@ -87,6 +89,10 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 		<figure class="<?php echo esc_attr( $template_args['hover_classes'] . ' ' . $template_args['border_radius'] ); ?> card-interactive">
 			<a href="<?php echo esc_url( $term_link ); ?>">
 				<div class="bottom-overlay post-meta fs-16 position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5 p-lg-8">
+					<?php if ( $card_index ) : ?>
+						<p class="text-white-50 mb-2 fw-bold"><?php echo esc_html( $card_index ); ?></p>
+					<?php endif; ?>
+
 					<?php if ( $display['show_title'] ) : ?>
 						<div class="mt-auto">
 							<<?php echo esc_attr( $title_tag ); ?> class="<?php echo esc_attr( $title_class ); ?>">
@@ -109,10 +115,10 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 			</a>
 
 			<?php if ( $template_args['show_figcaption'] && ( $excerpt || $template_args['show_term_count'] ) ) : ?>
-				<figcaption class="p-5">
+				<figcaption class="p-5 p-lg-8">
 					<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
 						<?php if ( $excerpt ) : ?>
-							<p class="fs-card-desc mb-3<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses( $excerpt, ['br' => []] ); ?></p>
+							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses( $excerpt, ['br' => []] ); ?></p>
 						<?php endif; ?>
 						<?php if ( $template_args['show_term_count'] ) : ?>
 							<p class="mb-3 small opacity-75">
@@ -137,6 +143,10 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 		<figure class="<?php echo esc_attr( $template_args['hover_classes'] . ' ' . $template_args['border_radius'] ); ?> card-interactive h-100">
 			<a href="<?php echo esc_url( $term_link ); ?>">
 				<div class="bottom-overlay post-meta fs-16 position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5 p-lg-8">
+					<?php if ( $card_index ) : ?>
+						<p class="text-white-50 mb-2 fw-bold"><?php echo esc_html( $card_index ); ?></p>
+					<?php endif; ?>
+
 					<?php if ( $display['show_title'] ) : ?>
 						<div class="mt-auto">
 							<<?php echo esc_attr( $title_tag ); ?> class="<?php echo esc_attr( $title_class ); ?>">
@@ -159,10 +169,10 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 			</a>
 
 			<?php if ( $template_args['show_figcaption'] && ( $excerpt || $template_args['show_term_count'] ) ) : ?>
-				<figcaption class="p-5">
+				<figcaption class="p-5 p-lg-8">
 					<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
 						<?php if ( $excerpt ) : ?>
-							<p class="fs-card-desc mb-3<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses( $excerpt, ['br' => []] ); ?></p>
+							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses( $excerpt, ['br' => []] ); ?></p>
 						<?php endif; ?>
 						<?php if ( $template_args['show_term_count'] ) : ?>
 							<p class="mb-3 small opacity-75">
