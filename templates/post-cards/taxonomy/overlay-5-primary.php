@@ -86,7 +86,7 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 	<?php if ( $image_url ) : ?>
 		<figure class="<?php echo esc_attr( $template_args['hover_classes'] . ' ' . $template_args['border_radius'] ); ?> card-interactive">
 			<a href="<?php echo esc_url( $term_link ); ?>">
-				<div class="bottom-overlay post-meta fs-16 position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5">
+				<div class="bottom-overlay post-meta fs-16 position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5 p-lg-8">
 					<?php if ( $display['show_title'] ) : ?>
 						<div class="mt-auto">
 							<<?php echo esc_attr( $title_tag ); ?> class="<?php echo esc_attr( $title_class ); ?>">
@@ -139,7 +139,7 @@ $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_cl
 	<?php else : ?>
 		<figure class="<?php echo esc_attr( $template_args['hover_classes'] . ' ' . $template_args['border_radius'] ); ?> card-interactive h-100">
 			<a href="<?php echo esc_url( $term_link ); ?>">
-				<div class="bottom-overlay post-meta fs-16 position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5">
+				<div class="bottom-overlay post-meta fs-16 position-absolute zindex-1 d-flex flex-column h-100 w-100 p-5 p-lg-8">
 					<?php if ( $display['show_title'] ) : ?>
 						<div class="mt-auto">
 							<<?php echo esc_attr( $title_tag ); ?> class="<?php echo esc_attr( $title_class ); ?>">
