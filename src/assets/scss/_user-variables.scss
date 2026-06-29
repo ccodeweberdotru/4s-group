@@ -1,0 +1,404 @@
+//--------------------------------------------------------------
+// User Variables — 4s-group
+// Source: DESIGN-EXTRACT-4s-group.md (2026-06-12)
+//--------------------------------------------------------------
+
+// ── Custom colors ──
+$custom-colors: (
+  "teal":        #1689a6,  // --sea-2
+  "sea":         #2fb6d0,  // --sea-1
+  "sea-pale":    #9fe3ef,  // --sky-light / eyebrow color on dark bg
+  "accent":      #10b6ce,  // --accent
+  "midnight":    #0e2a33,  // --ink / body color
+  "navy-dark":   #0a3a48,  // --sea-4 / --drk
+  "navy-deep":   #0c5266,  // --sea-3 / --drk2
+  "muted":       #4c6770,  // --ink-soft
+  "light-sea":   #f0f7f9,  // --paper
+  "paper-2":     #e3f0f3,  // --paper-2
+  "line":        #d8e7eb,  // --line
+  "line-2":      #c7dce2,  // --line-2
+  "brand-press": #e5490a,  // --brand-press
+);
+$custom-theme-colors: $custom-colors;
+
+// ── Theme colors ──
+$primary: #ff5101;  // brand orange — overrides $primary: $blue !default in _variables.scss
+$navy:    #0e2a33;  // dark body text (was #343f52)
+$aqua:    #1689a6;  // teal accent (was #54a8c7)
+
+$body-bg:    #ffffff;
+$body-color: #0e2a33;
+
+// ── Borders ──
+$border-color:      #d8e7eb;  // line — global light border
+$card-border-color: #d8e7eb;  // card border = line color
+
+// ── Muted text ──
+$text-muted: #4c6770;  // brand muted (was Bootstrap #aab0bc)
+
+// ── Border radius ──
+$border-radius:    0.313rem;  // ~5px
+$border-radius-sm: 0.188rem;
+$border-radius-lg: 0.313rem;
+
+// ── Typography ──
+$font-size-root:     16px;      // (was 20px) — affects all rem values
+$font-size-base:     1.125rem;  // 18px
+$font-weight-normal: 400;       // (was 500)
+$line-height-base:   1.65;      // (was 1.7)
+
+// Headings — light weight is key to this design
+$headings-font-weight:      300;   // (was 700)
+$h1-line-height:            1.08;  // (was 1.3 default)
+$h2-line-height:            1.08;  // (was 1.35 default)
+$h3-line-height:            1.08;  // (was 1.4 default)
+
+$h1-font-size: 4.75rem;   // 76px (was 70px)
+$h2-font-size: 3.25rem;   // 52px (was 45px)
+$h3-font-size: 1.625rem;  // 26px (was 21px)
+$h4-font-size: 0.813rem;  // 13px (uppercase label style)
+
+// Display
+$display-font-sizes: (
+  1: 4.375rem,
+  2: 3.75rem,
+  3: 3.125rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.75rem,
+);
+$display-font-weight: 300;
+
+// ── Buttons ──
+$btn-border-width:     1px;     // (was 2px)
+$btn-font-weight:      600;     // (was 700)
+$btn-border-radius:    50rem;   // pill shape
+$btn-border-radius-sm: 50rem;
+$btn-border-radius-lg: 50rem;
+
+$btn-padding-y:    1rem;       // 16px
+$btn-padding-x:    1.875rem;   // 30px
+$btn-font-size:    1rem;       // 16px
+
+$btn-padding-y-sm: 0.5rem;     // 8px
+$btn-padding-x-sm: 0.813rem;   // 13px
+$btn-font-size-sm: 0.813rem;   // 13px
+
+// ── Forms ──
+$input-font-size:          1rem;      // (was 0.75rem)
+$input-font-weight:        400;
+$input-bg:                 #f0f7f9;   // light blue-gray (was white)
+$input-color:              #0e2a33;
+$input-border-color:       #d8e7eb;
+$input-border-radius:      0.313rem;
+$input-padding-y:          0.813rem;  // 13px
+$input-padding-x:          0.938rem;  // 15px
+$input-focus-bg:           #f0f7f9;   // no change on focus
+$input-focus-border-color: #d8e7eb;   // no change on focus
+$input-focus-box-shadow:   none;
+$form-floating-height:     calc(3.125rem + 2px);  // 50px + 2px border
+
+// ── Heading overrides (high specificity to beat font-file rules) ──
+:root h1, :root .h1 { line-height: 1.08; }
+:root h2, :root .h2 { line-height: 1.08; }
+:root h3, :root .h3 { line-height: 1.08; }
+:root h1, :root .h1,
+:root h2, :root .h2 { letter-spacing: -0.02em; }
+:root h3, :root .h3 { letter-spacing: -0.01em; }
+
+// ── text-line pseudo-element ──
+$text-line-height: 1.5px;     // matches original (was 1px)
+$text-line-width:  1.625rem;  // 26px — matches original (was 12px)
+$text-line-color:  #1689a6;   // teal (was var(--bs-primary) = orange)
+$text-line-gap:    0.675rem;  // gap between line and text
+
+// Fix: Bootstrap auto-generates .text-line utility (#d8e7eb) which overrides .text-teal
+// because both use !important — double-class wins by specificity
+.text-teal.text-line     { color: #1689a6 !important; }
+.text-white.text-line    { color: #ffffff !important; }
+.text-sea-pale.text-line { color: #9fe3ef !important; &::before { background: #9fe3ef; } }
+
+.text-line { padding-left: ($text-line-width + $text-line-gap) !important; }
+
+// ── Unordered list ──
+$unordered-list-padding-left:  1.4rem;
+$unordered-list-dot-font-size: 1.8rem;
+.unordered-list > li::before { line-height: 1.11; }
+
+// ── Navigation ──
+$nav-link-font-size:   0.938rem;  // 15px (was 0.8rem)
+$nav-link-font-weight: 500;       // (was 700)
+
+// ── Font size utilities ──
+$font-size-lg: 1.3125rem;  // 21px
+$lead-fs-lg:   $font-size-lg;
+
+// ── Tables ──
+.table { font-size: 0.9375rem; } // 15px
+
+.table-key-value {
+  tr:not(:last-child) { border-bottom: 1px solid #d8e7eb; }
+  td { padding: 0.75rem 1rem; }
+  td:first-child { color: #4c6770; font-weight: 400; }
+  td:last-child  { font-weight: 500; text-align: end; }
+}
+
+.table-key-value-dark {
+  tr:not(:last-child) { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+  td { padding: 0.75rem 1rem; }
+  td:first-child, th:first-child { color: rgba(255, 255, 255, 0.5); font-weight: 400; }
+  td:last-child, th:last-child   { font-weight: 500; color: #ffffff; text-align: end; }
+}
+
+// ── Hover shadow + lift (reusable) ──
+$box-shadow-hover: 0 22px 50px -30px rgba(12, 82, 102, 0.55);
+
+.card-lift {
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    box-shadow: $box-shadow-hover;
+    transform: translateY(-3px);
+    border-color: transparent !important;
+  }
+}
+
+// ── Process step card (pstep): border + lift + orange left bar on hover ──
+.card-pstep {
+  overflow: hidden;
+  border: 1px solid #d8e7eb !important;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #ff5101, #e5490a);
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover::before { transform: scaleY(1); }
+}
+
+// ── Overlay gradient — navy-deep (#0c5266) blueish, matches original design ──
+.overlay .bottom-overlay::after {
+  background: linear-gradient(to top, rgba(#0a3a48, 1.0) 0%, rgba(#0c5266, 0.70) 52%, transparent 100%);
+}
+.overlay-5 span.bg {
+  background: linear-gradient(180deg, rgba(#0c5266, 0.35) 0%, rgba(#0c5266, 0.72) 52%, rgba(#0a3a48, 1.0) 100%) !important;
+}
+
+// ── Services mosaic CSS grid ──
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+  > .overlay-5 > a { height: 100%; }
+  .img-scroll-wrap { height: 100%; aspect-ratio: unset; }
+}
+.tile-big { grid-column: span 3; grid-row: span 2; min-height: 520px; }
+.tile-med { grid-column: span 3; min-height: 248px; }
+.tile-sm  { grid-column: span 2; min-height: 248px; }
+
+@media (max-width: 767px) {
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .tile-big, .tile-med, .tile-sm { grid-column: span 2; grid-row: auto; min-height: 240px; }
+}
+
+// ── About badge (frosted glass stat on photo cards) ──
+.about-badge {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  z-index: 4;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(14px);
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.25rem;  // 14px 20px
+  .b1 { font-size: 1.625rem; font-weight: 300; line-height: 1; color: #ffffff; }  // 26px
+  .b2 { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.85); margin-top: 0.3125rem; }  // 13px
+}
+
+// ── Card component classes ──
+$card-desc-font-size:  0.906rem;    // 14.5px — adv-card description (orig .adv-card p)
+$scard-desc-font-size: 0.96875rem;  // 15.5px — scard / pstep description (orig .scard p / .pstep p)
+.fs-card-desc  { font-size: $card-desc-font-size;  line-height: 1.55; }
+.fs-scard-desc { font-size: $scard-desc-font-size; line-height: 1.6; }
+
+// ── Adv-card icon box (42×42) ──
+.adv-ico {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  i { font-size: 22px; line-height: 1; }
+}
+
+// ── Spider section center photo ──
+.spider-photo {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+// ── Styleguide palette swatch height ──
+.palette-swatch { height: 80px; }
+
+// ── Extra small font-size utility ──
+.fs-14 { font-size: 14px; }
+.fs-18 { font-size: 18px; }
+
+// ── img-scroll-wrap aspect ratios (replaces inline height) ──
+.img-scroll-wrap-sq   { aspect-ratio: 5/4; }   // 3-col photo cards
+.img-scroll-wrap-card { aspect-ratio: 16/10; }  // 2-col banner cards
+.img-scroll-wrap-wide { aspect-ratio: 32/9; }   // full-width banner
+
+// ── Badge medium size ──
+.badge-md {
+  font-size: 1rem !important;
+  padding: 0.4375rem 1rem;
+}
+
+// ── Ghost card: slightly lighter on hover, border stays visible ──
+.card-ghost {
+  &:hover {
+    background-color: rgba(255, 255, 255, .16) !important;
+    border-color: rgba(255, 255, 255, .35) !important;
+  }
+}
+
+// ── Adv-card: border always visible, hover bg → white, border-color → line-2 ──
+.card-adv {
+  position: relative;
+  border: 1px solid #d8e7eb !important;
+  &:hover {
+    background-color: #ffffff !important;
+    border-color: #c7dce2 !important;  // line-2 on hover (not transparent)
+    z-index: 1;
+  }
+}
+
+// ── Brand shadows (navy-dark tones, match --shadow / --shadow-lg) ──
+.shadow-brand    { box-shadow: 0 22px 50px -30px rgba(12, 82, 102, 0.55) !important; }
+.shadow-brand-lg { box-shadow: 0 40px 90px -40px rgba(10, 58, 72, 0.60) !important; }
+
+// ── Cell component (compact info card: label / title / desc) ──
+.cw-cell { padding: 0.8125rem 0.9375rem !important; }  // 13px 15px
+.cw-cell-label {
+  font-size: 0.6875rem;     // 11px
+  font-weight: 700;
+  letter-spacing: 0.089375rem;  // 1.43px
+  text-transform: uppercase;
+  line-height: 1.65;
+}
+.cw-cell-title {
+  font-size: 1rem;          // 16px
+  font-weight: 600;
+  line-height: 1.65;
+}
+.cw-cell-desc {
+  font-size: 0.78125rem;    // 12.5px
+  line-height: 1.65;
+}
+
+.cw-sm-subtitle {
+  font-size: $h4-font-size;      // 13px
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  line-height: 1.5;
+}
+.cw-step-num {
+  font-size: 0.9375rem;  // 15px — process step numbers (no uppercase)
+  font-weight: 700;
+  letter-spacing: 0.09375rem;  // 1.5px
+  line-height: 1.65;
+}
+.cw-chip {
+  font-size: 0.75rem;    // 12px — category banner chips
+  font-weight: 600;
+  letter-spacing: 0.0075rem;
+  padding: 0.3125rem 0.6875rem;  // 5px 11px
+  border-radius: 50rem;
+}
+.cw-card-title {
+  font-size: 1.1875rem;  // 19px
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.cw-card-title-md {
+  font-size: 1.3125rem;  // 21px
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.cw-card-title-lg {
+  font-size: 1.4375rem;  // 23px
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+// ── Doc cards ──
+.card-docs {
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem 1.375rem;
+  cursor: pointer;
+  h5 {
+    font-size: 1.03125rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #ff5101, #e5490a);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: none;
+  }
+  &:hover::before {
+    transform: scaleX(1);
+  }
+  .btn-outline-secondary {
+    padding: 0.5625rem 1rem;
+    font-size: 0.875rem;
+    color: #1689a6;
+    border-color: #d8e7eb;
+    background-color: transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  &:hover .btn-outline-secondary {
+    background-color: #ff5101;
+    border-color: #ff5101;
+    color: #ffffff;
+  }
+}
+
+// ── Reusable left-bar hover effect (orange scaleY slide-in from top) ──
+// Placed after .card-docs so it overrides .card-docs::before when combined
+.card-border-left {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #ff5101, #e5490a);
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover::before { transform: scaleY(1); }
+}
+
+//START IMPORT FONTS
+$path-to-fonts: 'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700';
+//END IMPORT FONTS
