@@ -26,7 +26,7 @@ $template_args = wp_parse_args( $template_args ?? [], [
 	'show_card_arrow' => true,
 	'card_read_more'  => 'none',
 	'show_term_count' => false,
-	'badges_max'      => 6,
+	'badges_max'      => 10,
 ] );
 
 // Query clients belonging to this term
