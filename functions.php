@@ -5,6 +5,10 @@
  * @package 4s-group
  */
 
+// Allow HTML in taxonomy term descriptions (removes WP default kses sanitization)
+remove_filter( 'pre_term_description', 'wp_filter_kses' );
+remove_filter( 'term_description', 'wp_kses_data' );
+
 // ── clients_category: card_index term meta ──────────────────────────────────
 
 add_action( 'init', function () {
