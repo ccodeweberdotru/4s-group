@@ -73,6 +73,12 @@ if ( ! empty( $display['show_excerpt'] ) && ! empty( $term->description ) ) {
 	$excerpt = $term->description;
 }
 
+$list_items_raw = get_term_meta( $term->term_id, 'term_list_items', true );
+$list_items     = ( $list_items_raw && is_string( $list_items_raw ) ) ? json_decode( $list_items_raw, true ) : [];
+if ( ! is_array( $list_items ) ) {
+	$list_items = [];
+}
+
 $title_tag   = isset( $display['title_tag'] ) ? sanitize_html_class( $display['title_tag'] ) : 'h2';
 $title_class = ! empty( $display['title_class'] ) ? esc_attr( $display['title_class'] ) : 'h5 mb-3 fw-semibold';
 
@@ -109,11 +115,18 @@ $card_index = get_term_meta( $term->term_id, 'card_index', true );
 				<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>" class="<?php echo esc_attr( $template_args['border_radius'] ); ?>">
 			</a>
 
-			<?php if ( $template_args['show_figcaption'] && ( $excerpt || $template_args['show_term_count'] ) ) : ?>
+			<?php if ( $template_args['show_figcaption'] && ( $excerpt || ! empty( $list_items ) || $template_args['show_term_count'] ) ) : ?>
 				<figcaption class="p-5 p-lg-8">
 					<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
 						<?php if ( $excerpt ) : ?>
 							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses_post( $excerpt ); ?></p>
+						<?php endif; ?>
+						<?php if ( ! empty( $list_items ) ) : ?>
+							<ul class="unordered-list bullet-primary">
+								<?php foreach ( $list_items as $item ) : ?>
+									<li><?php echo wp_kses_post( $item ); ?></li>
+								<?php endforeach; ?>
+							</ul>
 						<?php endif; ?>
 						<?php if ( $template_args['show_term_count'] ) : ?>
 							<p class="mb-3 small opacity-75">
@@ -163,11 +176,18 @@ $card_index = get_term_meta( $term->term_id, 'card_index', true );
 				<img src="<?php echo esc_url( get_template_directory_uri() . '/dist/assets/img/image-placeholder.jpg' ); ?>" alt="" class="<?php echo esc_attr( $template_args['border_radius'] ); ?>">
 			</a>
 
-			<?php if ( $template_args['show_figcaption'] && ( $excerpt || $template_args['show_term_count'] ) ) : ?>
+			<?php if ( $template_args['show_figcaption'] && ( $excerpt || ! empty( $list_items ) || $template_args['show_term_count'] ) ) : ?>
 				<figcaption class="p-5 p-lg-8">
 					<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
 						<?php if ( $excerpt ) : ?>
 							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses_post( $excerpt ); ?></p>
+						<?php endif; ?>
+						<?php if ( ! empty( $list_items ) ) : ?>
+							<ul class="unordered-list bullet-primary">
+								<?php foreach ( $list_items as $item ) : ?>
+									<li><?php echo wp_kses_post( $item ); ?></li>
+								<?php endforeach; ?>
+							</ul>
 						<?php endif; ?>
 						<?php if ( $template_args['show_term_count'] ) : ?>
 							<p class="mb-3 small opacity-75">
