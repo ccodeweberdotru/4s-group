@@ -122,7 +122,7 @@ $card_index = get_term_meta( $term->term_id, 'card_index', true );
 							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses_post( $excerpt ); ?></p>
 						<?php endif; ?>
 						<?php if ( ! empty( $list_items ) ) : ?>
-							<ul class="unordered-list bullet-primary">
+							<ul class="unordered-list bullet-primary mb-5<?php echo $excerpt ? ' mt-5' : ''; ?>">
 								<?php foreach ( $list_items as $item ) : ?>
 									<li><?php echo wp_kses_post( $item ); ?></li>
 								<?php endforeach; ?>
@@ -183,7 +183,7 @@ $card_index = get_term_meta( $term->term_id, 'card_index', true );
 							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses_post( $excerpt ); ?></p>
 						<?php endif; ?>
 						<?php if ( ! empty( $list_items ) ) : ?>
-							<ul class="unordered-list bullet-primary">
+							<ul class="unordered-list bullet-primary mb-5<?php echo $excerpt ? ' mt-5' : ''; ?>">
 								<?php foreach ( $list_items as $item ) : ?>
 									<li><?php echo wp_kses_post( $item ); ?></li>
 								<?php endforeach; ?>
