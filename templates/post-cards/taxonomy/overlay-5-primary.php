@@ -70,12 +70,7 @@ if ( ! empty( $display['use_html_title'] ) && ! empty( $display['html_title'] ) 
 
 $excerpt = '';
 if ( ! empty( $display['show_excerpt'] ) && ! empty( $term->description ) ) {
-	$desc = strip_tags( $term->description );
-	if ( $display['excerpt_length'] > 0 ) {
-		$excerpt = wp_trim_words( $desc, $display['excerpt_length'], '…' );
-	} else {
-		$excerpt = $desc;
-	}
+	$excerpt = $term->description;
 }
 
 $title_tag   = isset( $display['title_tag'] ) ? sanitize_html_class( $display['title_tag'] ) : 'h2';
@@ -118,7 +113,7 @@ $card_index = get_term_meta( $term->term_id, 'card_index', true );
 				<figcaption class="p-5 p-lg-8">
 					<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
 						<?php if ( $excerpt ) : ?>
-							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses( $excerpt, ['br' => []] ); ?></p>
+							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses_post( $excerpt ); ?></p>
 						<?php endif; ?>
 						<?php if ( $template_args['show_term_count'] ) : ?>
 							<p class="mb-3 small opacity-75">
@@ -172,7 +167,7 @@ $card_index = get_term_meta( $term->term_id, 'card_index', true );
 				<figcaption class="p-5 p-lg-8">
 					<div class="post-body h-100 d-flex flex-column from-left justify-content-end">
 						<?php if ( $excerpt ) : ?>
-							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses( $excerpt, ['br' => []] ); ?></p>
+							<p class="fs-card-desc mb-auto mt-8<?php echo ! empty( $display['excerpt_hide_mobile'] ) ? ' d-none d-md-block' : ''; ?>"><?php echo wp_kses_post( $excerpt ); ?></p>
 						<?php endif; ?>
 						<?php if ( $template_args['show_term_count'] ) : ?>
 							<p class="mb-3 small opacity-75">
